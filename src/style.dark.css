@@ -1,0 +1,61 @@
+:root {
+  --color-dark-bg: #1b1b1b; /* no */
+  --color-dark-primary: #a5a5a5; /* #000000 */
+  --color-dark-text: #a5a5a5; /* #1a1a1a */
+  --color-dark-text-hover: #1351f9; /* #057dbc */
+  --color-dark-text-light: #a5a5a5; /* #757575 */
+  --color-dark-heading: #a5a5a5; /* #000000 */
+  --color-dark-heading-black: #a5a5a5; /* black */
+  --color-dark-accent: #2f2f2f; /* #d1dce5 */
+}
+
+body.dark {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+body.dark hr {
+  background: var(--color-dark-accent);
+}
+
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: var(--color-dark-heading);
+}
+
+body.dark h1 {
+  color: var(--color-dark-heading-black);
+}
+
+body.dark blockquote {
+  color: var(--color-dark-text-light);
+  border-left-color: var(--color-dark-primary);
+}
+
+body.dark table thead tr th {
+  border-bottom-color: var(--color-dark-accent);
+}
+
+/* Link */
+
+body.dark a {
+  color: var(--color-dark-primary);
+}
+
+body.dark a:hover,
+body.dark a:focus {
+  color: var(--color-dark-text-hover);
+}
+
+/* Custom classes */
+
+body.dark .post-list-item h2 {
+  color: var(--color-dark-primary);
+}
+
+body.dark .blog-post-tag li {
+  color: var(--color-dark-text-light);
+}

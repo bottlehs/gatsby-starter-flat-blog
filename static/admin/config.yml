@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: bottlehs/gatsby-starter-flat-blog
+  branch: main
+  base_url: https://api.netlify.com
+  site_domain: gatsby-starter-flat-blog.netlify.app
+  auth_endpoint: auth
+  api_root: https://api.github.com
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: content/blog
+    create: true
+    slug: "{{slug}}/index"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
