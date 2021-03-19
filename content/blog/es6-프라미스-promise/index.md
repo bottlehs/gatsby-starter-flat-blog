@@ -55,7 +55,7 @@ get("coffee.json").then(
 )
 ```
 
-get 메서드를 호출하여 이것이 성공하거나 실패할 경우, 이를 핸들링 할 수 있따. 그리고 여러개의 프라미스를 실행할 경우, 이에 대한 완료 테스크를 정의 하기 위해, Promise.all API 를 사용한다.
+get 메서드를 호출하여 이것이 성공하거나 실패할 경우, 이를 핸들링 할 수 있따. 그리고 여러개의 프라미스를 실행할 경우, 이에 대한 완료 테스크를 정의 하기 위해, Promise.all API 를 사용한다.
 
 ```javascript
 Promise.all([promise1, promise2]).then(function (value) {
