@@ -10,7 +10,6 @@ export default ({ data, location }) => {
   const resumes = data.allMarkdownRemark.nodes
   const resume = 0 < resumes.length ? resumes[0] : {}
 
-  console.log(resume)
   if (resumes.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
