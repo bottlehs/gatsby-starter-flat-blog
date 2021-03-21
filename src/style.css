@@ -337,11 +337,47 @@ a:focus {
   margin-bottom: var(--spacing-0);
 }
 
+.bio p.bio-introduction {
+  color: var(--color-text-light);
+}
+
 .bio-avatar {
   margin-right: var(--spacing-4);
   margin-bottom: var(--spacing-0);
   min-width: 50px;
   border-radius: 100%;
+}
+
+.bio-avatar-name {
+  border-radius: 8px;
+  transform-origin: center;
+  animation: flutter 2s linear infinite;
+  padding: 2px 6px;
+  background-color: #ecf0f2;
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: none;
+}
+
+@keyframes flutter {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  65% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .bio .bio-social {

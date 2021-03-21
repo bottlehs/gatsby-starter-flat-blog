@@ -1,4 +1,4 @@
-const metaConfig = require('./gatsby-meta-config')
+const metaConfig = require("./gatsby-meta-config")
 
 module.exports = {
   siteMetadata: metaConfig,
@@ -8,20 +8,27 @@ module.exports = {
       options: {
         siteUrl: `https://gatsby-starter-flat-blog.netlify.app`,
       },
-    },    
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-182874893-1",
         head: true,
-        anonymize: true
+        anonymize: true,
       },
-    },    
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/__about`,
+        name: `about`,
       },
     },
     {
@@ -85,7 +92,7 @@ module.exports = {
           },
         ],
       },
-    },  
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -94,15 +101,15 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
             },
-          },          
+          },
           {
             resolve: `gatsby-remark-images-medium-zoom`, // Important!
             options: {
               //...
-            }
-          },          
+            },
+          },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
@@ -112,13 +119,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              inlineCodeMarker: '%',
+              inlineCodeMarker: "%",
             },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`, 
-          `gatsby-remark-emoji`,                   
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-emoji`,
         ],
       },
     },
@@ -127,20 +134,20 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-images`,
-          `gatsby-remark-images-medium-zoom` // Important!
+          `gatsby-remark-images-medium-zoom`, // Important!
         ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-              linkImagesToOriginal: false // Important!
-            }
+              linkImagesToOriginal: false, // Important!
+            },
           },
           {
             resolve: `gatsby-remark-images-medium-zoom`, // Important!
-            options: {}
-          }
+            options: {},
+          },
         ],
         name: metaConfig.title,
         short_name: metaConfig.title,
@@ -158,19 +165,19 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-page-progress',
+      resolve: "gatsby-plugin-page-progress",
       options: {
         height: 3,
         prependToBody: false,
         color: `#000000`,
-        footerHeight: 50
-      }
-    },  
+        footerHeight: 50,
+      },
+    },
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,    
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,    
+    `gatsby-transformer-sharp`,
   ],
 }

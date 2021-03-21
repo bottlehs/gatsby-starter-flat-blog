@@ -22,7 +22,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
             frontmatter {
-              title,
+              title
+              category
               tags
             }
           }
@@ -31,7 +32,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           group(field: frontmatter___tags) {
             fieldValue
           }
-        }        
+        }
       }
     `
   )
@@ -79,7 +80,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         tag: tag.fieldValue,
       },
     })
-  })  
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
