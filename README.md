@@ -14,20 +14,16 @@
 <img alt="Twitter: bottlehs" src="https://img.shields.io/twitter/follow/bottlehs.svg?style=social" target="_blank" />
 </a>
 
-[한국어🇰🇷](./README.ko.md)
-
 ![screenshot](./assets/screenshot.png)
 
 In this template...
 
 - 💄 Code highlight with Fira Code font
-- 🧙 CLI Tool
 - 😄 Emoji (emojione)
 - 🗣 Social share feature (Twitter, Facebook)
 - 💬 Comment feature (disqus, utterances)
 - ☕ 'Buy me a coffee' service
 - 🤖 GA
-- ⭐ Enhance UX
 - ⚙ Configurable
 
 > [About this Template](https://www.gatsbyjs.org/starters/bottlehs/gatsby-starter-flat-blog/)
@@ -54,20 +50,20 @@ In this template...
 
 ```sh
 # create a new Gatsby site using the blog starter
-npx gatsby new my-blog-starter https://github.com/bottlehs/gatsby-starter-flat-blog
+npx gatsby new my-blog https://github.com/bottlehs/gatsby-starter-flat-blog
 ```
 
 > If you are not using `npx`, following [Gatsby Getting Started](https://www.gatsbyjs.org/docs/quick-start)
 
 ```sh
 npm install -g gatsby-cli
-gatsby new my-blog-starter https://github.com/bottlehs/gatsby-starter-flat-blog
+gatsby new my-blog https://github.com/bottlehs/gatsby-starter-flat-blog
 ```
 
 ### 2. Start developing
 
 ```sh
-cd my-blog-starter/
+cd my-blog/
 npm start
 # open localhost:8000
 ```
@@ -81,15 +77,9 @@ You can write...
 
 > With markdown syntax and some meta data
 
-#### Support script for creating new post
-
-![cli-tool-example](assets/cli-tool-example.gif)
-
 ```sh
 npm run post
 ```
-
-👉 Use **gatsby-post-gen** (<https://github.com/bottlehs/gatsby-post-gen>)
 
 ### 4. Fix meta data
 
@@ -124,41 +114,25 @@ You can fix meta data of blog in `/gatsby-meta-config.js` file.
 ```sh
 src
 ├── components // Just component with styling
-├── layout // home, post layout
-├── pages // routing except post: /(home), /about
-├── styles
-│   ├── code.scss
-│   ├── dark-theme.scss
-│   ├── light-theme.scss
-│   └── variables.scss
+├── pages // routing except post: /(index), /about
+│── normalize.css
+│── style.css
+│── style.dark.css
 └── templates
     ├── blog-post.js
-    └── home.js
-```
-
-### 🎨 Style
-
-You can customize color in `src/styles` directory.
-
-```sh
-src/styles
-├── code.scss
-├── dark-theme.scss
-├── light-theme.scss
-└── variables.scss
+    └── tags.js
 ```
 
 ### 🍭 Tips (You can change...)
 
-- Profile image! (replace file in `/content/assets/profile.png`)
-- Favicon image! (replace file in `/content/assets/felog.png`)
-- Header gradient! (\$theme-gradient `/styles/variables.scss`)
+- Profile image! (replace file in `/content/assets/profile-pic.png`)
+- Favicon image! (replace file in `/content/assets/app-icon.png`)
 - Utterances repository! (replace repository address in `/gatsby-meta-config.js`)
   - ⚠️ Please check, this guide(<https://utteranc.es/>)
 
 ## ☕ Like it?
 
-<a href="https://www.buymeacoffee.com/bottlehs" target="_blank">
+<a href="buymeacoffee.com/bottle" target="_blank">
   <img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" >
 </a>
 
@@ -195,17 +169,6 @@ Become a financial contributor and help us sustain our community. [[Contribute](
 #### Organizations
 
 Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/gatsby-starter-flat-blog/contribute)]
-
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/0/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/1/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/2/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/3/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/4/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/5/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/6/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/7/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/8/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/gatsby-starter-flat-blog/organization/9/website"><img src="https://opencollective.com/gatsby-starter-flat-blog/organization/9/avatar.svg"></a>
 
 ## LICENSE
 
