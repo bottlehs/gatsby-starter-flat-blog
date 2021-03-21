@@ -6,6 +6,7 @@
 
 [![Financial Contributors on Open Collective](https://opencollective.com/gatsby-starter-flat-blog/all/badge.svg?label=financial+contributors)](https://opencollective.com/gatsby-starter-flat-blog) [![Greenkeeper badge](https://badges.greenkeeper.io/bottlehs/gatsby-starter-flat-blog.svg)](https://greenkeeper.io/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/bottlehs/gatsby-starter-flat-blog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/bottlehs/gatsby-starter-flat-blog/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/bottlehs/gatsby-starter-flat-blog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/bottlehs/gatsby-starter-flat-blog/context:javascript)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/bottlehs/gatsby-starter-flat-blog/issues)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/290a052e-7670-40bb-91e0-1192119e6955/deploy-status)](https://app.netlify.com/sites/gatsby-starter-flat-blog/deploys)
 
