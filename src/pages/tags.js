@@ -26,13 +26,11 @@ const TagsPage = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle + ' Tags'}>
+    <Layout location={location} title={siteTitle + " Tags"}>
       <SEO title="All tags" />
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {tags.map(tag => {
-          const title = tag.fieldValue || ''
-
           return (
             <li key={tag.fieldValue}>
               <article
@@ -42,7 +40,11 @@ const TagsPage = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} itemProp="url" title={tag.fieldValue}>
+                    <Link
+                      to={`/tags/${kebabCase(tag.fieldValue)}/`}
+                      itemProp="url"
+                      title={tag.fieldValue}
+                    >
                       <span itemProp="headline">{tag.fieldValue}</span>
                     </Link>
                   </h2>
@@ -50,11 +52,11 @@ const TagsPage = ({ data, location }) => {
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: tag.totalCount+' posts' || 0,
+                      __html: tag.totalCount + " posts" || 0,
                     }}
                     itemProp="count"
                   />
-                </section>                
+                </section>
               </article>
             </li>
           )
