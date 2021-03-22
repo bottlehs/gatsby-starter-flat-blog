@@ -18,17 +18,17 @@
 
 In this template...
 
-- 💄 Code highlight with Fira Code font
+- 👓 Code highlight with Fira Code font
 - 😄 Emoji (emojione)
 - 🗣 Social share feature (Twitter, Facebook)
 - 💬 Comment feature (disqus, utterances)
 - ☕ 'Buy me a coffee' service
-- 🤖 GA
+- 📝 GA
 - ⚙ Configurable
 
 > [About this Template](https://www.gatsbyjs.org/starters/bottlehs/gatsby-starter-flat-blog/)
 
-## Demo
+## 🔗 Live Demo
 
 - [Default Theme](https://gatsby-starter-flat-blog.netlify.app)
 
@@ -44,7 +44,7 @@ In this template...
 
 > If you're using this template, Please Pull Request for `Use case`!
 
-## 😎 Quick Start
+## 🚀 Quick Start
 
 ### 1. Create a Gatsby site
 
@@ -97,7 +97,7 @@ You can fix meta data of blog in `/gatsby-meta-config.js` file.
 }
 ```
 
-## 🧐 Customize
+## 🎨 Customize
 
 ### ⚙ Gatsby config
 
@@ -109,7 +109,7 @@ You can fix meta data of blog in `/gatsby-meta-config.js` file.
 └── gatsby-node.js // Gatsby Node config
 ```
 
-### ⛑ Structure
+### ❤ Structure
 
 ```sh
 src
@@ -132,7 +132,7 @@ src
 
 ## ☕ Like it?
 
-<a href="buymeacoffee.com/bottle" target="_blank">
+<a href="https://www.buymeacoffee.com/bottlehs" target="_blank">
   <img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" >
 </a>
 
@@ -144,7 +144,7 @@ If you are currently writing in the Medium, consider migration with [medium-to-o
 
 [Issue](https://github.com/bottlehs/gatsby-starter-flat-blog/issues)
 
-## 🎁 Contributing
+## 😎 Contributing
 
 [Contributing guide](./CONTRIBUTING.md)
 
@@ -176,6 +176,6 @@ Support this project with your organization. Your logo will show up here with a 
 
 <div align="center">
 
-<sub><sup>Project by <a href="https://github.com/bottlehs">@bottlehs</a></sup></sub><small>✌</small>
+<sub><sup>Project by <a href="https://github.com/bottlehs">@bottlehs</a></sup></sub><small>🤩</small>
 
 </div>

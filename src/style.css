@@ -61,7 +61,7 @@
   --color-heading: #292929;
   --color-heading-black: black;
   --color-accent: #d1dce5;
-  --color-tag: rgba(117, 117, 117, 1);
+  --color-tag: rgb(170, 166, 166);
 }
 
 /* HTML elements */
@@ -395,6 +395,39 @@ a:focus {
   font-weight: var(--fontWeight-bold);
   text-decoration: none;
   color: inherit;
+}
+
+.blog-sponsor {
+  margin-bottom: 15px;
+}
+
+.blog-sponsor a {
+  display: inline-block;
+  padding: 0 7px;
+  width: 133px;
+  height: 33px;
+  text-decoration: none;
+  background-color: #bb5794;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  letter-spacing: -0.08px;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: left;
+}
+
+.blog-sponsor a img {
+  width: 20px;
+  margin-bottom: 1px;
+  box-shadow: none;
+  border: none;
+  vertical-align: middle;
+}
+
+.blog-sponsor a span {
+  margin-left: 6px;
+  color: #fff;
 }
 
 .share {
