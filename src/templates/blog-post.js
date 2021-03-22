@@ -37,6 +37,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           itemProp="articleBody"
         />
         <Share title={post.frontmatter.title} url={location.href} content={post.frontmatter.description} twitterHandle={twitterHandle} tags={post.frontmatter.tags}/>
+        <div className="blog-sponsor">
+          <a className="sponsor-button" target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/bottlehs">
+            <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" /><span>Buy me a coffee</span>
+          </a>
+        </div>
         <Tag tags={post.frontmatter.tags} />
         <DiscussionEmbed {...disqusConfig} />
         <hr />
