@@ -14,7 +14,7 @@ tags:
   - JS
 ---
 
-![ES6 For ... Of 루프](/assets/es6.png "ES6 For ... Of 루프")
+![ES6 For ... Of 루프](/assets/es6.png 'ES6 For ... Of 루프')
 
 기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할 수 있는 기능을 제공한다.
 
@@ -36,12 +36,12 @@ for (let value of coffee) {
 ```
 
 ```javascript
-for (let char of "coffee") {
+for (let char of 'coffee') {
   console.log(char)
 }
 
 // 출력 결과
-"c"("o")("f")("f")("e")("e")
+'c'('o')('f')('f')('e')('e')
 ```
 
 DOM에 접근하여 반복된 리스트를 가져오는데 유용할 수 있다.
@@ -52,7 +52,7 @@ DOM에 접근하여 반복된 리스트를 가져오는데 유용할 수 있다.
   <li>espresso</li>
 </ul>
 
-let nodes = document.querySelectorAll("li")
+let nodes = document.querySelectorAll('li')
 for (let node of codes) {
   console.log(node.textContent)
 }
@@ -84,4 +84,4 @@ espresso 에스프레소
 
 Object.keys를 활용하면 오브젝트에서 프로퍼티 키를 배열로 반환하게 된다. 이 배열은 iterator 형태로 순환이 가능하기 for..of 루프를 통해 해당 프로퍼티 값을 구한다.
 
-[ES6 For ... Of 루프](http://www.google.co.kr)
+출처 : [ES6 For ... Of 루프](https://www.bottlehs.com/javascript/es6-for-of-%EB%A3%A8%ED%94%84/ 'ES6 For ... Of 루프')

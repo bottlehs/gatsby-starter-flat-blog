@@ -12,7 +12,7 @@ tags:
   - JS
 ---
 
-![ES6 화살표 함수 (arrow function expression)](/assets/es6.png "ES6 화살표 함수 (arrow function expression)")
+![ES6 화살표 함수 (arrow function expression)](/assets/es6.png 'ES6 화살표 함수 (arrow function expression)')
 
 ES6에서는 **익명함수**를 표현하기 위해 화살표 함수(Arrow function) 표현식을 지원한다.
 기존에는 아래와 같이 함수를 선언 하였다.
@@ -56,7 +56,7 @@ let coffee = (americano,espresso) = > americano * espresso; // SyntaxError
 파라미터가 하나이면 소괄호 `()`를 제외하고 해당 파라미터만 작성이 가능하다.
 
 ```javascript
-let coffee = americano => americano * 20
+let coffee = (americano) => americano * 20
 var result = coffee(10)
 console.log(result) // 200
 ```
@@ -71,8 +71,8 @@ console.log(result) // 200
 
 Arrow function은 IE환경에서 아직 제공하지 않는다.
 
-![화살표 함수(Arrow function) 브라우저 호환성](/assets/익명함수_브라우저호환성.png "화살표 함수(Arrow function) 브라우저 호환성")
+![화살표 함수(Arrow function) 브라우저 호환성](/assets/익명함수_브라우저호환성.png '화살표 함수(Arrow function) 브라우저 호환성')
 
 사용할려면 babel 을 사용해야 하는데 babel 은 다음에 자세히 알아 보도록 하겠다.
 
-[ES6 화살표 함수 (arrow function expression)](http://www.google.co.kr)
+출처 : [ES6 화살표 함수 (arrow function expression)](https://www.bottlehs.com/javascript/es6-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-arrow-function/ 'ES6 화살표 함수 (arrow function expression)')

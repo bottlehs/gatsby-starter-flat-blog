@@ -14,7 +14,7 @@ tags:
   - ECMAScript6
 ---
 
-![ES6 임포트(import)와 익스포트(export) 모듈](/assets/es6.png "ES6 임포트(import)와 익스포트(export) 모듈")
+![ES6 임포트(import)와 익스포트(export) 모듈](/assets/es6.png 'ES6 임포트(import)와 익스포트(export) 모듈')
 
 모듈 프로그래밍은 각 프로그램 파일을 모듈 단위로 분리하여, 이를 구조화할 수 있는 장점이 있다.
 
@@ -38,9 +38,9 @@ export * from "coffeeModule"; // 하위 모듈에서 익스포트한 모든 변�
 ### Import(임포트)
 
 ```javascript
-import { coffee1, coffee2 } from "coffeeModule" // 기본 임포트
-import { coffee as developcoffee } from "coffee" // 임포트 할 변수를 다른 변수로 alias
-import * as coffee from "developcoffee" // 변수 전체를 임포트한 뒤 coffee 변수로 alias
+import { coffee1, coffee2 } from 'coffeeModule' // 기본 임포트
+import { coffee as developcoffee } from 'coffee' // 임포트 할 변수를 다른 변수로 alias
+import * as coffee from 'developcoffee' // 변수 전체를 임포트한 뒤 coffee 변수로 alias
 ```
 
-[ES6 임포트(import)와 익스포트(export) 모듈](http://www.google.co.kr)
+출처 : [ES6 임포트(import)와 익스포트(export) 모듈](https://www.bottlehs.com/javascript/es6-%EC%9E%84%ED%8F%AC%ED%8A%B8-import-%EC%99%80-%EC%9D%B5%EC%8A%A4%ED%8F%AC%ED%8A%B8-export-%EB%AA%A8%EB%93%88/ 'ES6 임포트(import)와 익스포트(export) 모듈')
