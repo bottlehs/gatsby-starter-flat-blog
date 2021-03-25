@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 export default ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata.title
   const resumes = data.allMarkdownRemark.nodes
   const resume = 0 < resumes.length ? resumes[0] : {}
 

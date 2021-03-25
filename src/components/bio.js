@@ -27,6 +27,9 @@ const Bio = () => {
           }
           social {
             github
+            instagram
+            twitter
+            facebook            
           }
         }
       }
@@ -34,24 +37,24 @@ const Bio = () => {
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
+  const author = data.site.siteMetadata.author
+  const social = data.site.siteMetadata.social
 
-  const avatar = data?.avatar?.childImageSharp?.fixed
+  const avatar = data.avatar.childImageSharp.fixed
 
   return (
     <div className="bio">
       {avatar && (
         <Image
           fixed={avatar}
-          alt={author?.name || ``}
+          alt={author.name || ``}
           className="bio-avatar"
           imgStyle={{
             borderRadius: `50%`,
           }}
         />
       )}
-      {author?.name && (
+      {author.name && (
         <div>
           <p>
             Written by{" "}
@@ -59,13 +62,38 @@ const Bio = () => {
               @{author.name}
             </Link>{" "}
           </p>
-          {author?.summary && (
+          {author.summary && (
             <p className="bio-introduction">{author.summary}</p>
           )}
           <ul className="bio-social">
+          {social.github && (
             <li>
-              <a href={`https://github.com/${social?.github || ``}`}>Github</a>
+              <Link to={social.github} target="_blank">
+                Github
+              </Link>
             </li>
+          )}
+          {social.instagram && (
+            <li>
+              <Link to={social.instagram} target="_blank">
+                Instagram
+              </Link>
+            </li>
+          )}
+          {social.twitter && (
+            <li>
+              <Link to={social.twitter} target="_blank">
+                Twitter
+              </Link>
+            </li>
+          )}
+          {social.facebook && (
+            <li>
+              <Link to={social.facebook} target="_blank">
+                Facebook
+              </Link>
+            </li>
+          )}
           </ul>
         </div>
       )}
