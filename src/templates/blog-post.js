@@ -6,16 +6,24 @@ import SEO from "../components/seo"
 import Tag from "../components/tag"
 import Share from "../components/share"
 import { DiscussionEmbed } from "disqus-react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+} from '@fortawesome/free-regular-svg-icons'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata.title
   const twitterHandle = "_MsLinda";
   const { previous, next } = pageContext
+  const disqusUse = data.site.siteMetadata.disqus.use
   const disqusConfig = {
-    shortname: 'gatsby_starter_flat_blog',
+    shortname: data.site.siteMetadata.disqus.shortname,
     config: { identifier: pageContext.slug, siteTitle },
   }  
+  const buymeacoffeeUse = data.site.siteMetadata.buymeacoffee.use;
+  const buymeacoffeeUrl = data.site.siteMetadata.buymeacoffee.url;
  
   return (
     <Layout location={location} title={siteTitle}>
@@ -37,13 +45,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           itemProp="articleBody"
         />
         <Share title={post.frontmatter.title} url={location.href} content={post.frontmatter.description} twitterHandle={twitterHandle} tags={post.frontmatter.tags}/>
-        <div className="blog-sponsor">
-          <a className="sponsor-button" target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/bottlehs">
-            <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" /><span>Buy me a coffee</span>
-          </a>
-        </div>
+
+        {buymeacoffeeUse && (
+          <div className="blog-sponsor">
+            <Link className="sponsor-button" rel="noopener noreferrer" to={buymeacoffeeUrl} target="_blank">
+              <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" /><span>Buy me a coffee</span>
+            </Link>
+          </div>
+        )}
+        
         <Tag tags={post.frontmatter.tags} />
-        <DiscussionEmbed {...disqusConfig} />
+        {disqusUse && (
+          <DiscussionEmbed {...disqusConfig} />
+        )}
         <hr />
         <footer>
           <Bio />
@@ -59,17 +73,23 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             padding: 0,
           }}
         >
-          <li>
+          <li className="prev">
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleLeft}  />
+                </div>                               
+                <div className="text">{previous.frontmatter.title}</div>
               </Link>
             )}
           </li>
-          <li>
+          <li className="next">
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                <div className="text">{next.frontmatter.title}</div>                
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleRight}  />
+                </div>
               </Link>
             )}
           </li>
@@ -86,6 +106,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        disqus {
+          use
+          shortname
+        }
+        buymeacoffee {
+          use
+          url
+        }        
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

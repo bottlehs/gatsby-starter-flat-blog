@@ -6,6 +6,8 @@ description:
   프라미스(Promise)는 비동기 호출이 일어났을 때 또는 해당 테스크가 완료했을 때, 이를 처리할 함수나 에러를 처리할
   함수를 설정하는 모듈이다. 특히, 비동기 처리가 많이 일어나는 XMLHttpRequest 처리에 주로 사용되며, 반환값이 연계적으로 처리가
   가능하기에 순차적인 호출을 보장한다.
+draft: false
+category: 'javascript'
 tags:
   - 프라미스(Promise)
   - ES6
@@ -13,7 +15,7 @@ tags:
   - JS
 ---
 
-![ES6 프라미스(Promise)](/assets/es6.png "ES6 프라미스(Promise)")
+![ES6 프라미스(Promise)](/assets/es6.png 'ES6 프라미스(Promise)')
 
 프라미스(Promise)는 비동기 호출이 일어났을 때 또는 해당 테스크가 완료했을 때, 이를 처리할 함수나 에러를 처리할 함수를 설정하는 모듈이다. 특히, 비동기 처리가 많이 일어나는 XMLHttpRequest 처리에 주로 사용되며, 반환값이 연계적으로 처리가 가능하기에 순차적인 호출을 보장한다.
 
@@ -23,7 +25,7 @@ tags:
 function get(url) {
   return new Promise(function (resolve, reject) {
     var req = new XMLHttpRequest()
-    req.open("GET", url)
+    req.open('GET', url)
 
     req.onload = function () {
       if (req.status == 200) {
@@ -34,7 +36,7 @@ function get(url) {
     }
 
     req.onerror = function () {
-      reject(Error("Network Error"))
+      reject(Error('Network Error'))
     }
 
     req.send()
@@ -45,12 +47,12 @@ function get(url) {
 프라미스 생성자는 프라미스 인스턴스를 만든다. 그리고 executor 콜백을 넘기는데 이는 resolve, reject 두 개의 파라미터를 가지며, 성공하면 resolve 콜백에 결과값을, 실패하면 reject 콜백에 에러 메시지를 전달한다.
 
 ```javascript
-get("coffee.json").then(
+get('coffee.json').then(
   function (response) {
-    console.log("Success!", response)
+    console.log('Success!', response)
   },
   function (error) {
-    console.error("Failed", error)
+    console.error('Failed', error)
   }
 )
 ```
@@ -59,7 +61,7 @@ get 메서드를 호출하여 이것이 성공하거나 실패할 경우, 이를
 
 ```javascript
 Promise.all([promise1, promise2]).then(function (value) {
-  console.log("완료", value)
+  console.log('완료', value)
 })
 ```
 
@@ -67,8 +69,8 @@ Promise.all([promise1, promise2]).then(function (value) {
 
 ```javascript
 Promise.all([promise1(), promise2()]).then(function (value) {
-  console.log("완료", value)
+  console.log('완료', value)
 })
 ```
 
-[ES6 프라미스(Promise)](http://www.google.co.kr)
+출처 : [ES6 프라미스(Promise)](https://www.bottlehs.com/javascript/es6-%ED%94%84%EB%9D%BC%EB%AF%B8%EC%8A%A4-promise/ 'ES6 프라미스(Promise)')

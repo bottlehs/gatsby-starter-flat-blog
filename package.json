@@ -8,6 +8,10 @@
     "url": "https://github.com/bottlehs/gatsby-starter-flat-blog"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "bodymovin": "^4.13.0",
     "disqus-react": "^1.0.10",
     "gatsby": "^2.24.66",
@@ -47,6 +51,8 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-react": "^7.23.1",
     "prettier": "2.1.2"
   },
   "homepage": "https://github.com/bottlehs/gatsby-starter-flat-blog#readme",
@@ -62,10 +68,11 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'"
   }
 }

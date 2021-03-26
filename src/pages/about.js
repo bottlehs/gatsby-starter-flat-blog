@@ -6,14 +6,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 export default ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata.title
   const resumes = data.allMarkdownRemark.nodes
+  console.log(resumes)
   const resume = 0 < resumes.length ? resumes[0] : {}
 
   if (resumes.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="About" />
         <Bio />
         <p>
           No blog about found. Add markdown posts to "content/__about" (or the
@@ -26,7 +27,7 @@ export default ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="About" />
       <Bio />
       <section
         dangerouslySetInnerHTML={{ __html: resume.html }}
@@ -46,7 +47,7 @@ export const pageQuery = graphql`
 
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { eq: "about" } } }
+      filter: { frontmatter: { category: { eq: null } } }
     ) {
       nodes {
         excerpt

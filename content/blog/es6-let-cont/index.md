@@ -3,6 +3,8 @@ templateKey: blog-post
 title: ES6 let & cont
 date: 2021-03-14T07:11:12.292Z
 description: let, const 는 ES6 에 추가 되었다. let,const는 변수(let)와 상수(const)를 구분 하여 정의할때 사용 된다.
+draft: false
+category: 'javascript'
 tags:
   - JavaScript
   - ES6
@@ -12,7 +14,7 @@ tags:
   - Var
 ---
 
-![ES6 let & cont](/assets/es6.png "ES6 let & cont")
+![ES6 let & cont](/assets/es6.png 'ES6 let & cont')
 
 기존에는 var 키워드로 변수와 상수를 모두 정의 하였지만 ES6에서는 변수와 상수를 구분할수 있는 let 과 const 가 추가 되었다.
 
@@ -22,7 +24,7 @@ let 은 변수를 정의할 때 사용된다.
 변수는 변하는 값을 의미한다.
 
 ```javascript
-let coffee = "americano"
+let coffee = 'americano'
 ```
 
 기존 var 키워드로 선언한 변수를 함수 스코프(scope) 변수라고 하며, 함수 안에서 변수를 선언하면 함수 외부를 제외하고 함수 내부 어디서든지 접근할수 있다. 이와 달리 let 은 블록 스코프 변수이며, 블록 스코프 안에서 변수를 선언하면 블록 내부에서만 접근을 할수 있고 외부에서는 접근 할 수 없다.
@@ -83,7 +85,7 @@ const 은 상수를 정의할 때 사용된다.
 상수는 변하지 않는 값을 의미한다.
 
 ```javascript
-const coffee = "americano"
+const coffee = 'americano'
 ```
 
 기존에는 상수를 선언 할수있는 키워드가 없었다. 그래서 변수,상수 모두 var 로 정의하여 사용 하였다.
@@ -145,4 +147,4 @@ var 키워드로 선언한 변수는 this 가 window 오브젝트를 참조하�
 
 ES6 하위 호환성을 위해 var 키워드를 여전히 사용 가능하지만, ES6 에서 상수선언은 const 사용을 권장한다.
 
-[ES6 let & cont](http://www.google.co.kr)
+출처 : [ES6 let & cont](https://www.bottlehs.com/javascript/es6-let-cont/ 'ES6 let & cont')

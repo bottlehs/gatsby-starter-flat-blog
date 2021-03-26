@@ -6,6 +6,8 @@ description:
   기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했다. ES6에서는 class 키워드를 사용하여
   객체지향을 구현 할수 있다. ES6 클래스는 생성자와 상속을 더욱 간단하고 명확한 구문으로 다룰 수 있게 한다. 클래스 자신도 함수이며,
   생성자를 가지고 함수를 생성하는 새로운 구문이다.
+draft: false
+category: 'javascript'
 tags:
   - ES6
   - Class
@@ -14,7 +16,7 @@ tags:
   - JavaScript
 ---
 
-![ES6 클래스 (Class)](/assets/es6.png "ES6 클래스 (Class)")
+![ES6 클래스 (Class)](/assets/es6.png 'ES6 클래스 (Class)')
 
 기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했다. ES6에서는 class 키워드를 사용하여 객체지향을 구현 할수 있다.
 
@@ -29,7 +31,7 @@ Coffee.prototype.getName = function () {
   return this.name
 }
 
-var americano = new Coffee("americano")
+var americano = new Coffee('americano')
 console.log(americano.getName()) // americano
 ```
 
@@ -39,7 +41,7 @@ ES6 클래스는 생성자와 상속을 더욱 간단하고 명확한 구문으�
 class Coffee {
   constructor(name) {
     this.name = name
-    this.type = "americano"
+    this.type = 'americano'
   }
 
   getName() {
@@ -47,7 +49,7 @@ class Coffee {
   }
 }
 
-let coffee = new Coffee("americano")
+let coffee = new Coffee('americano')
 console.log(coffee.getName()) // americano
 console.log(typeof Coffee)
 ```
@@ -60,11 +62,11 @@ class 키워드를 앞에 붙여 선언한다. 생성자 함수는 constructor�
 class Americano extends Coffee {
   constuctor(name) {
     super(name)
-    this.type = "americano"
+    this.type = 'americano'
   }
 }
 
-let americano = new Americano("been")
+let americano = new Americano('been')
 console.log(americano instanceof Coffee) // true
 console.log(americano.getName()) // been
 ```
@@ -76,11 +78,11 @@ extends 키워드를 활용해 Coffee 클래스로부터 상속을 받는다. �
 ```javascript
 class Coffee {
   static getName() {
-    return "Coffee"
+    return 'Coffee'
   }
 }
 
 console.log(Coffee.getName()) // Coffee
 ```
 
-[ES6 클래스 (Class)](http://www.google.co.kr)
+출처 : [ES6 클래스 (Class)](https://www.bottlehs.com/javascript/es6-%ED%81%B4%EB%9E%98%EC%8A%A4-class/ 'ES6 클래스 (Class)')

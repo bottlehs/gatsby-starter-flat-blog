@@ -17,10 +17,17 @@ const SEO = ({ description, lang, meta, title }) => {
         site {
           siteMetadata {
             title
+            author {
+              name
+            }
             description
             social {
               github
+              instagram
+              twitter
+              facebook  
             }
+            naverSiteVerification
           }
         }
       }
@@ -28,7 +35,7 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const defaultTitle = site.siteMetadata.title
 
   return (
     <Helmet
@@ -38,7 +45,7 @@ const SEO = ({ description, lang, meta, title }) => {
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
-        { name: 'naver-site-verification', content: '5ea388b83eab4834c0e497523f17618e578c68b9' },
+        { name: 'naver-site-verification', content: site.siteMetadata.naverSiteVerification },
         {
           name: `description`,
           content: metaDescription,
@@ -61,7 +68,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.social?.github || ``,
+          content: site.siteMetadata.author.name || ``,
         },
         {
           name: `twitter:title`,
