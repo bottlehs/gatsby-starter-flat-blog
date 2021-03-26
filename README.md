@@ -30,7 +30,7 @@ In this template...
 
 ## 🔗 Live Demo
 
-- [Default Theme](https://gatsby-starter-flat-blog.netlify.app)
+- [Demo](https://gatsby-starter-flat-blog.netlify.app)
 
 <details>
   <summary>Use case</summary>
