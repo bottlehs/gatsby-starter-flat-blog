@@ -7,6 +7,8 @@ description:
   수 있는 기능을 제공한다. iterator는 어떤 데이터 집합을 순서대로 접근할 때 사용된다. for..of 는
   Symbol.iterator를 호출 하는데 배열과 문자열은 이 속성을 제공하고 있다. 즉, 배열을 순서대로 순회하며, 문자열은 문자를 하나씩
   접근하게 된다. 또한, 사용자 정의 iterator을 커스텀 객체에 만들 수도 있다.
+draft: false
+category: 'javascript'
 tags:
   - For ... Of 루프
   - ES6

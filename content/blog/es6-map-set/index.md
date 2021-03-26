@@ -6,6 +6,8 @@ description:
   Map과 Set은 Java와 같은 다른 프로그래밍 언어에서도 자주 사용하는 데이터 구조이다. Map은 키와 값으로
   이루어진 데이터 구조이고, Set은 중복 없는 키-값으로 이루어진다. 기존 자바스크립트에서는 배열과 객체로 해당 기능을 구현할 수 있었지만,
   입력값의 목록이나 특정값 찾기를 수행하기 위해서는 별도의 과정이 필요하다.
+draft: false
+category: 'javascript'
 tags:
   - ES6
   - Map & Set

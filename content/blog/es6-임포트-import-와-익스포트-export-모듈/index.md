@@ -6,6 +6,8 @@ description:
   모듈 프로그래밍은 각 프로그램 파일을 모듈 단위로 분리하여, 이를 구조화할 수 있는 장점이 있다. ES5 이전의
   자바스크립트는 모듈을 지원하지 않았기에 다양한 방식을 사용해 이를 구현해왔다. ES6부터 import, export 구문을 활용하면, 한
   모듈이 특정 변수를 익스포트(export)하고 다른 모듈이 이를 임포트(import)하여 계층 관계를 만들 수 있다.
+draft: false
+category: 'javascript'
 tags:
   - ES6
   - 임포트(import)

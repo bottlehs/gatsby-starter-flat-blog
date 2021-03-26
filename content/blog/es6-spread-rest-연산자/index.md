@@ -6,6 +6,8 @@ description:
   ES6부터 가변 인자를 표현할 '...' 키워드가 추가 되었다. 기존에는 배열 값을 함수 임자로 넘기려면 apply()
   내장 메서드나 argments 를 통해 변수를 받아서, 이를 Array.prorotype.slice() 함수로 잘라내야 했지만 '...'
   키워드를 이용하면 여러 개의 인자를 넘길 수 있다. 이는 Spread 연산자라고 한다.
+draft: false
+category: 'javascript'
 tags:
   - ES6
   - Spread

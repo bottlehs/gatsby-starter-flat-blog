@@ -6,6 +6,8 @@ description:
   기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했다. ES6에서는 class 키워드를 사용하여
   객체지향을 구현 할수 있다. ES6 클래스는 생성자와 상속을 더욱 간단하고 명확한 구문으로 다룰 수 있게 한다. 클래스 자신도 함수이며,
   생성자를 가지고 함수를 생성하는 새로운 구문이다.
+draft: false
+category: 'javascript'
 tags:
   - ES6
   - Class

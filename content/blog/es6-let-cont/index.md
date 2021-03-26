@@ -3,6 +3,8 @@ templateKey: blog-post
 title: ES6 let & cont
 date: 2021-03-14T07:11:12.292Z
 description: let, const 는 ES6 에 추가 되었다. let,const는 변수(let)와 상수(const)를 구분 하여 정의할때 사용 된다.
+draft: false
+category: 'javascript'
 tags:
   - JavaScript
   - ES6

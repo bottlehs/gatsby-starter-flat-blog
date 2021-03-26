@@ -3,6 +3,8 @@ templateKey: blog-post
 title: ES6 화살표 함수 (arrow function expression)
 date: 2021-03-14T13:00:33.383Z
 description: ES6에서는 익명함수를 표현하기 위해 화살표 함수 (Arrow function) 표현식을 지원한다.
+draft: false
+category: 'javascript'
 tags:
   - 화살표 함수
   - Arrow function
