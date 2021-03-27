@@ -1,13 +1,13 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const _ = require("lodash")
+const _ = require('lodash')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post & blog tag
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const blogTag = path.resolve("src/templates/tags.js")
+  const blogTag = path.resolve('src/templates/tags.js')
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -53,10 +53,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
-    const posts = result.data.allMarkdownRemark.edges.filter(
-      ({ node }) => !node.frontmatter.draft && !!node.frontmatter.category
-    )
-        
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1]
       const next = index === 0 ? null : posts[index - 1]
@@ -77,7 +73,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tags = result.data.tagsGroup.group
 
   // Make tag pages
-  tags.forEach(tag => {
+  tags.forEach((tag) => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: blogTag,
