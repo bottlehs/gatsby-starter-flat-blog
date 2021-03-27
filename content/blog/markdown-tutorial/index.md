@@ -3,6 +3,8 @@ templateKey: blog-post
 title: Markdown Tutorial
 date: 2021-03-27T10:15:26.956Z
 description: Markdown Tutorial
+draft: false
+category: 'etc'
 tags:
   - Markdown
 ---
@@ -90,9 +92,9 @@ _이텔릭_
 
 [GOOGLE](https://google.com)
 
-[NAVER](https://naver.com "NAVER로 이동!")
+[NAVER](https://naver.com 'NAVER로 이동!')
 
-[DAUM](https://www.daum.net/ "DAUM로 이동!")
+[DAUM](https://www.daum.net/ 'DAUM로 이동!')
 
 동해물과 [백두산](https://namu.wiki/w/%EB%B0%B1%EB%91%90%EC%82%B0)이 마르고 닳도록
 
@@ -123,7 +125,7 @@ _이텔릭_
 
 ```javascript
 function func() {
-  var a = "AAA"
+  var a = 'AAA'
   return a
 }
 ```
