@@ -173,7 +173,3 @@ $ git commit -m 'Study Markdown'
 # 수평선(Horizontal Rule)
 
 ---
-
----
-
----
