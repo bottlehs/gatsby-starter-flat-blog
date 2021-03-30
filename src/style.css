@@ -452,6 +452,10 @@ a:focus {
   padding: 5px;
 }
 
+.blog-post {
+  position: relative;
+}
+
 .blog-post header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
 }
@@ -632,7 +636,75 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.tocWrapper {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  right: calc((100vw - 720px) / 2 * (-1));
+}
+
+nav.container {
+  margin-top: 80px;
+  color: var(--color-text-light);
+  width: calc((100vw - 720px) / 2 - 50px);
+  display: none;
+  margin-left: 5rem;
+  border-left: 1px solid rgb(233, 236, 239);
+}
+
+nav.container .title {
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+nav.container .contents ul {
+  list-style: none;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+nav.container .contents ul > li {
+  line-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+nav.container .contents ul > li > p {
+  margin-bottom: 0px;
+}
+
+nav.container .contents ul > li a {
+  text-decoration: none;
+  transition: all 0.125s ease-in 0s;
+}
+
+nav.container .contents ul > li a.isCurrent {
+  font-size: 15px;
+  color: var(--color-primary);
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
 /* Media queries */
+
+@media screen and (min-width: 1200px) {
+  nav.container {
+    position: sticky;
+    top: 70px;
+    display: block;
+    max-width: 360px;
+    margin-right: 20px;
+    overflow: auto;
+    word-break: break-word;
+    max-height: calc(100vh - 200px);
+    font-size: 14px;
+  }
+}
 
 @media (max-width: 42rem) {
   blockquote {
