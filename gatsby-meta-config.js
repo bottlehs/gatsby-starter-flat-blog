@@ -18,7 +18,7 @@ module.exports = {
   googleAnalyticsId: 'UA-192500931-1',
   naverSiteVerification: '5ea388b83eab4834c0e497523f17618e578c68b9',
   disqus: {
-    use: false,
+    use: true,
     shortname: 'gatsby-starter-flat-blog'
   },
   buymeacoffee: {
