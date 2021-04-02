@@ -15,7 +15,7 @@ collections:
     label: Blog
     folder: content/blog
     create: true
-    slug: '{{slug}}/index'
+    slug: '{{category}}/{{slug}}/index'
     fields:
       - {
           label: 'Template Key',
@@ -26,6 +26,7 @@ collections:
       - { label: 'draft', name: 'draft', widget: 'hidden', default: false }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Category', name: 'category', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
