@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 
 const Tags = ({ data, pageContext, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`  
+  const siteTitle = data.site.siteMetadata.title
   const { tag } = pageContext
   const totalCount = data.allMarkdownRemark.totalCount
   const posts = data.allMarkdownRemark.nodes

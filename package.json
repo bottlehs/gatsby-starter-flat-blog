@@ -8,9 +8,13 @@
     "url": "https://github.com/bottlehs/gatsby-starter-flat-blog"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "bodymovin": "^4.13.0",
-    "disqus-react": "^1.0.10",
-    "gatsby": "^2.24.66",
+    "disqus-react": "^1.0.11",
+    "gatsby": "^2.32.11",
     "gatsby-image": "^2.4.21",
     "gatsby-plugin-canonical-urls": "^2.3.13",
     "gatsby-plugin-dark-mode": "^1.1.2",
@@ -33,20 +37,22 @@
     "gatsby-remark-smartypants": "^2.3.12",
     "gatsby-source-filesystem": "^2.3.31",
     "gatsby-transformer-remark": "^2.13.1",
-    "gatsby-transformer-sharp": "^2.5.17",
-    "netlify-cms-app": "^2.12.25",
-    "prismjs": "^1.21.0",
+    "gatsby-transformer-sharp": "^2.12.1",
+    "netlify-cms-app": "^2.14.29",
+    "prismjs": "^1.23.0",
     "react": "^16.14.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^4.2.0",
-    "react-share": "^4.3.1",
+    "react-share": "^4.4.0",
     "react-switch": "^5.0.1",
     "share": "^0.7.40",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-react": "^7.23.1",
     "prettier": "2.1.2"
   },
   "homepage": "https://github.com/bottlehs/gatsby-starter-flat-blog#readme",
@@ -62,10 +68,11 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'"
   }
 }

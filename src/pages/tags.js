@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 import kebabCase from "lodash/kebabCase"
 
 const TagsPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata.title
   const tags = data.allMarkdownRemark.group
   if (tags.length === 0) {
     return (

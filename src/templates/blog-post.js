@@ -1,22 +1,60 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tag from "../components/tag"
 import Share from "../components/share"
+import TableOfContents from '../components/TableOfContents';
 import { DiscussionEmbed } from "disqus-react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+} from '@fortawesome/free-regular-svg-icons'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata.title
   const twitterHandle = "_MsLinda";
   const { previous, next } = pageContext
+  const disqusUse = data.site.siteMetadata.disqus.use
   const disqusConfig = {
-    shortname: 'gatsby_starter_flat_blog',
+    shortname: data.site.siteMetadata.disqus.shortname,
     config: { identifier: pageContext.slug, siteTitle },
   }  
+  const buymeacoffeeUse = data.site.siteMetadata.buymeacoffee.use;
+  const buymeacoffeeUrl = data.site.siteMetadata.buymeacoffee.url;
+  const tocItems = data.markdownRemark.tableOfContents;
+  const isTOCVisible = tocItems.length > 0;
+  const [currentHeaderUrl, setCurrentHeaderUrl] = useState(undefined);
  
+  useEffect(() => {
+    const handleScroll = () => {
+      let aboveHeaderUrl;
+      const currentOffsetY = window.pageYOffset;
+      const headerElements = document.querySelectorAll('.anchor-header');
+      for (const elem of headerElements) {
+        const { top } = elem.getBoundingClientRect();
+        const elemTop = top + currentOffsetY;
+        const isLast = elem === headerElements[headerElements.length - 1];
+        if (currentOffsetY < elemTop - HEADER_OFFSET_Y) {
+          aboveHeaderUrl &&
+            setCurrentHeaderUrl(aboveHeaderUrl.split(location.origin)[1]);
+          !aboveHeaderUrl && setCurrentHeaderUrl(undefined);
+          break;
+        } else {
+          isLast && setCurrentHeaderUrl(elem.href.split(location.origin)[1]);
+          !isLast && (aboveHeaderUrl = elem.href);
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -28,22 +66,39 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+
+      {isTOCVisible && (
+        <div className={'tocWrapper'}>
+          <TableOfContents
+            items={tocItems}
+            currentHeaderUrl={currentHeaderUrl}
+          />
+        </div>
+      )}
+
+         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
+
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
         <Share title={post.frontmatter.title} url={location.href} content={post.frontmatter.description} twitterHandle={twitterHandle} tags={post.frontmatter.tags}/>
-        <div className="blog-sponsor">
-          <a className="sponsor-button" target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/bottlehs">
-            <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" /><span>Buy me a coffee</span>
-          </a>
-        </div>
+
+        {buymeacoffeeUse && (
+          <div className="blog-sponsor">
+            <Link className="sponsor-button" rel="noopener noreferrer" to={buymeacoffeeUrl} target="_blank">
+              <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" /><span>Buy me a coffee</span>
+            </Link>
+          </div>
+        )}
+        
         <Tag tags={post.frontmatter.tags} />
-        <DiscussionEmbed {...disqusConfig} />
+        {disqusUse && (
+          <DiscussionEmbed {...disqusConfig} />
+        )}
         <hr />
         <footer>
           <Bio />
@@ -59,17 +114,23 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             padding: 0,
           }}
         >
-          <li>
+          <li className="prev">
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleLeft}  />
+                </div>                               
+                <div className="text">{previous.frontmatter.title}</div>
               </Link>
             )}
           </li>
-          <li>
+          <li className="next">
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                <div className="text">{next.frontmatter.title}</div>                
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleRight}  />
+                </div>
               </Link>
             )}
           </li>
@@ -86,12 +147,21 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        disqus {
+          use
+          shortname
+        }
+        buymeacoffee {
+          use
+          url
+        }        
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
@@ -101,3 +171,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const HEADER_OFFSET_Y = 100;

@@ -6,13 +6,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://gatsby-starter-flat-blog.netlify.app`,
+        siteUrl: metaConfig.siteUrl,
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-182874893-1",
+        trackingId: metaConfig.googleAnalyticsId,
         head: true,
         anonymize: true,
       },
@@ -70,6 +70,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { frontmatter: { draft: { eq: false } } }
                 ) {
                   edges {
                     node {
@@ -86,9 +87,9 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Flat Blog RSS Feed",
+            title: metaConfig.title+" RSS Feed",
             match: "^/blog/",
-            link: "https://gatsby-starter-flat-blog.netlify.app",
+            link: metaConfig.siteUrl,
           },
         ],
       },
@@ -122,9 +123,17 @@ module.exports = {
               inlineCodeMarker: "%",
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `anchor-header`, 
+              maintainCase: false, 
+              removeAccents: true,
+              elements: [`h1`, `h2`, 'h3', `h4`, `h5`],
+            },
+          },          
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
           `gatsby-remark-emoji`,
         ],
       },
