@@ -466,6 +466,10 @@ a:focus {
   color: var(--color-text-light);
 }
 
+.blog-post-nav {
+  margin-bottom: var(--spacing-6);
+}
+
 .blog-post-nav ul {
   margin: var(--spacing-0);
 }
@@ -615,6 +619,7 @@ a:focus {
 .blog-post-tag {
   list-style: none;
   margin: 0;
+  margin-bottom: var(--spacing-1);
 }
 
 .blog-post-tag li {
@@ -640,7 +645,7 @@ a:focus {
   position: absolute;
   top: 0;
   height: 100%;
-  right: calc((100vw - 720px) / 2 * (-1));
+  right: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
 }
 
 nav.container {

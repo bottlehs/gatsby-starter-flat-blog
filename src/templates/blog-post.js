@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const disqusUse = data.site.siteMetadata.disqus.use
   const disqusConfig = {
     shortname: data.site.siteMetadata.disqus.shortname,
-    config: { identifier: pageContext.slug, siteTitle },
+    config: { url: location.href, identifier: pageContext.slug, title: siteTitle },
   }  
   const buymeacoffeeUse = data.site.siteMetadata.buymeacoffee.use;
   const buymeacoffeeUrl = data.site.siteMetadata.buymeacoffee.url;
@@ -67,14 +67,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         itemType="http://schema.org/Article"
       >
 
-      {isTOCVisible && (
-        <div className={'tocWrapper'}>
-          <TableOfContents
-            items={tocItems}
-            currentHeaderUrl={currentHeaderUrl}
-          />
-        </div>
-      )}
+        {isTOCVisible && (
+          <div className={'tocWrapper'}>
+            <TableOfContents
+              items={tocItems}
+              currentHeaderUrl={currentHeaderUrl}
+            />
+          </div>
+        )}
 
          <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
@@ -96,6 +96,42 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         )}
         
         <Tag tags={post.frontmatter.tags} />
+
+        {(previous || next) && (      
+        <nav className="blog-post-nav">
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+            }}
+          >
+            {previous && (
+            <li className="prev">              
+              <Link to={previous.fields.slug} rel="prev">
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleLeft}  />
+                </div>                               
+                <div className="text">{previous.frontmatter.title}</div>
+              </Link>
+            </li>              
+            )}
+            {next && (          
+            <li className="next">
+              <Link to={next.fields.slug} rel="next">
+                <div className="text">{next.frontmatter.title}</div>                
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleRight}  />
+                </div>
+              </Link>
+            </li>
+            )}
+          </ul>
+        </nav>
+        )}  
+
         {disqusUse && (
           <DiscussionEmbed {...disqusConfig} />
         )}
@@ -103,39 +139,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <footer>
           <Bio />
         </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li className="prev">
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                <div className="icon">
-                  <FontAwesomeIcon icon={faArrowAltCircleLeft}  />
-                </div>                               
-                <div className="text">{previous.frontmatter.title}</div>
-              </Link>
-            )}
-          </li>
-          <li className="next">
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                <div className="text">{next.frontmatter.title}</div>                
-                <div className="icon">
-                  <FontAwesomeIcon icon={faArrowAltCircleRight}  />
-                </div>
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      </article>      
     </Layout>
   )
 }
