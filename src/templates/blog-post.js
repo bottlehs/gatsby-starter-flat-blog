@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const disqusUse = data.site.siteMetadata.disqus.use
   const disqusConfig = {
     shortname: data.site.siteMetadata.disqus.shortname,
-    config: { identifier: pageContext.slug, siteTitle },
+    config: { url: location.href, identifier: pageContext.slug, title: siteTitle },
   }  
   const buymeacoffeeUse = data.site.siteMetadata.buymeacoffee.use;
   const buymeacoffeeUrl = data.site.siteMetadata.buymeacoffee.url;
@@ -67,14 +67,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         itemType="http://schema.org/Article"
       >
 
-      {isTOCVisible && (
-        <div className={'tocWrapper'}>
-          <TableOfContents
-            items={tocItems}
-            currentHeaderUrl={currentHeaderUrl}
-          />
-        </div>
-      )}
+        {isTOCVisible && (
+          <div className={'tocWrapper'}>
+            <TableOfContents
+              items={tocItems}
+              currentHeaderUrl={currentHeaderUrl}
+            />
+          </div>
+        )}
 
          <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>

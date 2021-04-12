@@ -640,7 +640,7 @@ a:focus {
   position: absolute;
   top: 0;
   height: 100%;
-  right: calc((100vw - 720px) / 2 * (-1));
+  right: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
 }
 
 nav.container {
