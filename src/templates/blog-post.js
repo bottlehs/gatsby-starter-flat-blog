@@ -96,6 +96,42 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         )}
         
         <Tag tags={post.frontmatter.tags} />
+
+        {(previous || next) && (      
+        <nav className="blog-post-nav">
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+            }}
+          >
+            {previous && (
+            <li className="prev">              
+              <Link to={previous.fields.slug} rel="prev">
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleLeft}  />
+                </div>                               
+                <div className="text">{previous.frontmatter.title}</div>
+              </Link>
+            </li>              
+            )}
+            {next && (          
+            <li className="next">
+              <Link to={next.fields.slug} rel="next">
+                <div className="text">{next.frontmatter.title}</div>                
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleRight}  />
+                </div>
+              </Link>
+            </li>
+            )}
+          </ul>
+        </nav>
+        )}  
+
         {disqusUse && (
           <DiscussionEmbed {...disqusConfig} />
         )}
@@ -103,39 +139,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <footer>
           <Bio />
         </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li className="prev">
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                <div className="icon">
-                  <FontAwesomeIcon icon={faArrowAltCircleLeft}  />
-                </div>                               
-                <div className="text">{previous.frontmatter.title}</div>
-              </Link>
-            )}
-          </li>
-          <li className="next">
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                <div className="text">{next.frontmatter.title}</div>                
-                <div className="icon">
-                  <FontAwesomeIcon icon={faArrowAltCircleRight}  />
-                </div>
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      </article>      
     </Layout>
   )
 }
