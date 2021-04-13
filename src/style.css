@@ -275,6 +275,10 @@ a:focus {
   margin: 0;
 }
 
+.post-list-contaner {
+  position: relative;
+}
+
 .post-list-item {
   margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
@@ -641,14 +645,22 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
-.tocWrapper {
+.tocWrapper,
+.tagTocWrapper {
   position: absolute;
   top: 0;
   height: 100%;
+}
+
+.tocWrapper {
   right: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
 }
 
-nav.container {
+.tagTocWrapper {
+  left: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
+}
+
+nav.container .tagTocWrapper nav.container {
   margin-top: 80px;
   color: var(--color-text-light);
   width: calc((100vw - 720px) / 2 - 50px);
@@ -657,10 +669,17 @@ nav.container {
   border-left: 1px solid rgb(233, 236, 239);
 }
 
+.tagTocWrapper nav.container {
+  margin-left: 0;
+  border-left: 0;
+  margin-right: 5rem;
+}
+
 nav.container .title {
   margin-bottom: 15px;
   margin-left: 20px;
   margin-top: 0px;
+  display: none;
 }
 
 nav.container .contents ul {
@@ -695,9 +714,14 @@ nav.container .contents ul > li a.isCurrent {
   transform: scale(1.05);
 }
 
+nav.container .contents ul > li span {
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
 /* Media queries */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1650px) {
   nav.container {
     position: sticky;
     top: 70px;

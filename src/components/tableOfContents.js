@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
 
-export default function TableOfContents({ items, currentHeaderUrl }) {
+const TableOfContents = ({ items, currentHeaderUrl }) => {
   const replaceItems = useMemo(() => {
     if (currentHeaderUrl) {
       return items.replace(
@@ -22,3 +22,5 @@ export default function TableOfContents({ items, currentHeaderUrl }) {
     </nav>
   ) : null;
 }
+
+export default TableOfContents
