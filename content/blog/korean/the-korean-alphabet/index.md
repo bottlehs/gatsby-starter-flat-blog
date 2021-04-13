@@ -9,6 +9,8 @@ tags:
   - korean
 ---
 
+![The Korean Alphabet](/assets/the-korean-alphabet.jpg 'The Korean Alphabet')
+
 Korea has a unique writing system, called "Hangeul".
 
 한국에서는 고유의 문자 한글이 있습니다.
