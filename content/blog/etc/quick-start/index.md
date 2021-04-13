@@ -1,12 +1,12 @@
 ---
 templateKey: blog-post
-title: Config
+title: Styling
 date: 2021-03-27T10:15:26.956Z
-description: Config
+description: Styling
 draft: false
 category: 'etc'
 tags:
-  - Markdown
+  - markdown
 ---
 
 # 제목(Header)

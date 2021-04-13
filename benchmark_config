@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: bottlehs/gatsby-starter-flat-blog
+  branch: main
+  base_url: https://api.netlify.com
+  site_domain: gatsby-starter-flat-blog.netlify.app
+  auth_endpoint: auth
+  api_root: https://api.github.com
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: settings
+    label: Settings
+    files:
+      - name: config
+        label: Config
+        file: gatsby-meta-config.json
+        fields:
+          - widget: string
+            name: title
+            label: Site Title
+            default: 'Gatsby Starter Flat Blog'
+            required: true
+          - widget: object
+            name: author
+            label: Author
+            fields:
+              - widget: string
+                name: name
+                label: Name
+                default: 'Your Name'
+                required: true
+              - widget: string
+                name: summary
+                label: Summary
+                default: 'Your Summary'
+                required: true
+          - widget: string
+            name: description
+            label: Description
+            default: 'Your Description'
+            required: false
+          - widget: string
+            name: siteUrl
+            label: Website URL
+            required: true
+          - widget: object
+            name: social
+            label: Social
+            fields:
+              - widget: string
+                name: github
+                label: Github
+                required: false
+              - widget: string
+                name: instagram
+                label: Instagram
+                required: false
+              - widget: string
+                name: twitter
+                label: Twitter
+                required: false
+              - widget: string
+                name: facebook
+                label: Facebook
+                required: false
+  - name: blog
+    label: Blog
+    folder: content/blog
+    create: true
+    slug: '{{category}}/{{slug}}/index'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'blog-post',
+        }
+      - { label: 'draft', name: 'draft', widget: 'hidden', default: false }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Category', name: 'category', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Category', name: 'category', widget: 'string' }

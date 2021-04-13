@@ -31,3 +31,11 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Category', name: 'category', widget: 'string' }
+      - label: Featured Image
+        name: thumbnail
+        widget: image
+        hint: 'Image size 1280x800 works best :)'
+        required: false
+        media_library:
+          config:
+            multiple: false

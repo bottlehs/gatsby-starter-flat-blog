@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tag from "../components/tag"
 import Share from "../components/share"
-import TableOfContents from '../components/TableOfContents';
+import TableOfContents from '../components/tableOfContents';
 import { DiscussionEmbed } from "disqus-react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
