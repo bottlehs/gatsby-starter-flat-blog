@@ -114,17 +114,17 @@ You can fix meta data of blog in `/gatsby-meta-config.js` file.
 ```sh
 src
 ├── components
-|   ├── bio.js
-|   ├── layout.js
-|   ├── seo.js
-|   ├── share.js
-|   ├── tableOfContents.js
-|   └── tag.js
+│   ├── bio.js
+│   ├── layout.js
+│   ├── seo.js
+│   ├── share.js
+│   ├── tableOfContents.js
+│   └── tag.js
 ├── pages
-|   ├── 404.js
-|   ├── about.js
-|   ├── index.js
-|   └── tags.js
+│   ├── 404.js
+│   ├── about.js
+│   ├── index.js
+│   └── tags.js
 │── normalize.css
 │── style.css
 │── style.dark.css
