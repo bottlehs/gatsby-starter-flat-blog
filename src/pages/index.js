@@ -68,6 +68,7 @@ const BlogIndex = ({ data, location }) => {
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug
+            const tags = post.frontmatter.tags || false
 
             return (
               <li key={post.fields.slug}>
@@ -85,12 +86,30 @@ const BlogIndex = ({ data, location }) => {
                     <small>{post.frontmatter.date}</small>
                   </header>
                   <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                    />
+                    {post.frontmatter.thumbnail && (
+                      <div className="post-list-thumbnail">
+                        <img src={post.frontmatter.thumbnail} alt="" />
+                      </div>
+                    )}
+                    <div className="post-list-content">
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: post.frontmatter.description || post.excerpt,
+                        }}
+                        itemProp="description"
+                      />
+                      {post.frontmatter.tags && (
+                        <ul>
+                        {post.frontmatter.tags.map(tag => {
+                          return (
+                            <li key={tag}>
+                              <a href={`/tags/${_.kebabCase(tag)}/`}>{tag}</a>
+                            </li>
+                          )
+                        })}
+                        </ul>
+                      )}
+                    </div>
                   </section>
                 </article>
               </li>
@@ -126,7 +145,10 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
+          category
           description
+          tags
+          thumbnail
         }
       }
     }
