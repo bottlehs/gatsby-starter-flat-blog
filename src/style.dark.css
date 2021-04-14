@@ -50,6 +50,12 @@ body.dark a:focus {
   color: var(--color-dark-text-hover);
 }
 
+/* bio */
+
+body.dark .bio .bio-social li a {
+  color: inherit;
+}
+
 /* Custom classes */
 
 body.dark .post-list-item h2 {

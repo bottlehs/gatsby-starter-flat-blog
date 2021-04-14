@@ -8,13 +8,13 @@ module.exports = {
   siteUrl: `https://gatsby-starter-flat-blog.netlify.app`,
   social: {
     github: `https://github.com/bottlehs`,
-    instagram: ``,
-    twitter: ``,
-    facebook: ``,
+    instagram: `https://instagram.com`,
+    twitter: `https://twitter.com`,
+    facebook: `https://facebook.com`,
   },
 
   icon: `content/assets/app-icon.png`,
-  keywords: [`Gatsby`,`Blog`,`Gatsby Starter Blog`],
+  keywords: [`Gatsby`,`Blog`,`Gatsby Starter Blog`,`Netlify`,`JAMStack`],
   googleAnalyticsId: 'UA-192500931-1',
   naverSiteVerification: '5ea388b83eab4834c0e497523f17618e578c68b9',
   disqus: {

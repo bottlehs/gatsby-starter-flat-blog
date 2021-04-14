@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: Guardians of the Goguryeo Tomb
-date: 2021-03-27T10:15:26.956Z
-description: Guardians of the Goguryeo Tomb
+date: 2021-04-13T20:15:26.956Z
+description: Wall paintings found in ancient tombs show us the life and culture of the Goguryeo people. In the painting, there are many pictures such as the sun with a three legged crow, the moon, flowers, people, and so on.
 draft: false
 category: 'korean'
 thumbnail: /assets/guardians-of-the-goguryeo-tomb.jpg
