@@ -1,4 +1,4 @@
-const metaConfig = require("./gatsby-meta-config")
+const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
   siteMetadata: metaConfig,
@@ -56,13 +56,13 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -86,9 +86,9 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: metaConfig.title+" RSS Feed",
-            match: "^/blog/",
+            output: '/rss.xml',
+            title: metaConfig.title + ' RSS Feed',
+            match: '^/blog/',
             link: metaConfig.siteUrl,
           },
         ],
@@ -106,9 +106,10 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-images-medium-zoom`, // Important!
+            resolve: `gatsby-remark-images-medium-zoom`,
             options: {
-              //...
+              margin: 36,
+              scrollOffset: 0,
             },
           },
           {
@@ -120,18 +121,18 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              inlineCodeMarker: "%",
+              inlineCodeMarker: '%',
             },
           },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              className: `anchor-header`, 
-              maintainCase: false, 
+              className: `anchor-header`,
+              maintainCase: false,
               removeAccents: true,
               elements: [`h1`, `h2`, 'h3', `h4`, `h5`],
             },
-          },          
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-emoji`,
@@ -141,29 +142,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        plugins: [
-          `gatsby-remark-images`,
-          `gatsby-remark-images-medium-zoom`, // Important!
-        ],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-              linkImagesToOriginal: false, // Important!
-            },
-          },
-          {
-            resolve: `gatsby-remark-images-medium-zoom`, // Important!
-            options: {},
-          },
-        ],
         name: metaConfig.title,
         short_name: metaConfig.title,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
-        display: `flat-ui`,
+        display: `minimal-ui`,
         icon: metaConfig.icon,
       },
     },
@@ -174,7 +158,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-page-progress",
+      resolve: 'gatsby-plugin-page-progress',
       options: {
         height: 3,
         prependToBody: false,
