@@ -771,7 +771,7 @@ nav.container .contents ul > li span {
 
 .social-icon-instagram {
   color: #d6249f;
-  color: radial-gradient(
+  background: radial-gradient(
     circle at 30% 107%,
     #fdf497 0%,
     #fdf497 5%,
@@ -779,6 +779,8 @@ nav.container .contents ul > li span {
     #d6249f 60%,
     #285aeb 90%
   );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .social-icon-twitter {
