@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: Gold Crown
-date: 2021-03-27T10:15:26.956Z
-description: Gold Crown
+date: 2021-04-13T21:15:26.956Z
+description: Shilla is called the Millennium Kingdom, as it existed for 992 years, almost a millennium. It enjoyed a flourishing Buddhist culture, as well as political independence from the Tang Dynasty of China. Although Unified Shilla was the first nation to bring all kingdoms and tribes together as one, its ruling class became luxurious and settle for the present as time passed.
 draft: false
 category: 'korean'
 thumbnail: /assets/gold-crown.jpg
