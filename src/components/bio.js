@@ -8,6 +8,13 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faGithubSquare,
+  faInstagramSquare,
+  faTwitterSquare,
+  faFacebookSquare
+} from '@fortawesome/free-brands-svg-icons'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -29,7 +36,7 @@ const Bio = () => {
             github
             instagram
             twitter
-            facebook            
+            facebook  
           }
         }
       }
@@ -39,8 +46,8 @@ const Bio = () => {
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata.author
   const social = data.site.siteMetadata.social
-
   const avatar = data.avatar.childImageSharp.fixed
+  console.log(social);
 
   return (
     <div className="bio">
@@ -68,29 +75,29 @@ const Bio = () => {
           <ul className="bio-social">
           {social.github && (
             <li>
-              <Link to={social.github} target="_blank">
-                Github
+              <Link to={social.github} target="_blank" itemProp="url" className="social-icon-github">
+               <FontAwesomeIcon icon={faGithubSquare}  />
               </Link>
             </li>
           )}
           {social.instagram && (
             <li>
-              <Link to={social.instagram} target="_blank">
-                Instagram
+              <Link to={social.instagram} target="_blank" itemProp="url" className="social-icon-instagram">
+                <FontAwesomeIcon icon={faInstagramSquare}  />
               </Link>
             </li>
           )}
           {social.twitter && (
             <li>
-              <Link to={social.twitter} target="_blank">
-                Twitter
+              <Link to={social.twitter} target="_blank" itemProp="url" className="social-icon-twitter">
+               <FontAwesomeIcon icon={faTwitterSquare}  />
               </Link>
             </li>
           )}
           {social.facebook && (
             <li>
-              <Link to={social.facebook} target="_blank">
-                Facebook
+              <Link to={social.facebook} target="_blank" itemProp="url" className="social-icon-facebook">
+               <FontAwesomeIcon icon={faFacebookSquare}  />
               </Link>
             </li>
           )}
