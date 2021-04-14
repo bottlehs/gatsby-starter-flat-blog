@@ -8,9 +8,9 @@ module.exports = {
   siteUrl: `https://gatsby-starter-flat-blog.netlify.app`,
   social: {
     github: `https://github.com/bottlehs`,
-    instagram: ``,
-    twitter: ``,
-    facebook: ``,
+    instagram: `https://github.com/bottlehs`,
+    twitter: `https://github.com/bottlehs`,
+    facebook: `https://github.com/bottlehs`,
   },
 
   icon: `content/assets/app-icon.png`,
