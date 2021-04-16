@@ -20,14 +20,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content/posts`,
         name: `blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/__about`,
+        path: `${__dirname}/content/pages`,
         name: `about`,
       },
     },
@@ -88,7 +88,7 @@ module.exports = {
             `,
             output: '/rss.xml',
             title: metaConfig.title + ' RSS Feed',
-            match: '^/blog/',
+            match: '^/posts/',
             link: metaConfig.siteUrl,
           },
         ],

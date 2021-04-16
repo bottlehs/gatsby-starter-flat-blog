@@ -30,7 +30,7 @@ collections:
               - { label: URL, name: url }
   - name: blog
     label: Blog
-    folder: content/blog
+    folder: content/posts
     create: true
     slug: '{{category}}/{{slug}}/index'
     fields:

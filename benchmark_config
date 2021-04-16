@@ -68,7 +68,7 @@ collections:
                 required: false
   - name: blog
     label: Blog
-    folder: content/blog
+    folder: content/posts
     create: true
     slug: '{{category}}/{{slug}}/index'
     fields:
