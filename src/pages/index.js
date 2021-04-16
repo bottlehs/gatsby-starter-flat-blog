@@ -1,19 +1,19 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.nodes
   const tags = data.allMarkdownRemark.group
-  console.log(tags);
-  console.log(tags.length);
+  console.log(tags)
+  console.log(tags.length)
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -34,13 +34,12 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
 
       <div className="post-list-contaner">
-
         {tags.length !== 0 && (
           <div class="tagTocWrapper">
             <nav className="container">
-                <div className="contents">
-                  <ul>
-                  {tags.map(tag => {
+              <div className="contents">
+                <ul>
+                  {tags.map((tag) => {
                     return (
                       <li>
                         <Link
@@ -53,20 +52,20 @@ const BlogIndex = ({ data, location }) => {
 
                         <span
                           dangerouslySetInnerHTML={{
-                            __html: "("+tag.totalCount+")" || "(0)",
+                            __html: '(' + tag.totalCount + ')' || '(0)',
                           }}
                           itemProp="count"
                         />
                       </li>
                     )
                   })}
-                  </ul>
-                </div>
+                </ul>
+              </div>
             </nav>
-          </div>          
+          </div>
         )}
         <ol style={{ listStyle: `none` }}>
-          {posts.map(post => {
+          {posts.map((post) => {
             const title = post.frontmatter.title || post.fields.slug
             const tags = post.frontmatter.tags || false
 
@@ -100,13 +99,13 @@ const BlogIndex = ({ data, location }) => {
                       />
                       {post.frontmatter.tags && (
                         <ul>
-                        {post.frontmatter.tags.map(tag => {
-                          return (
-                            <li key={tag}>
-                              <a href={`/tags/${_.kebabCase(tag)}/`}>{tag}</a>
-                            </li>
-                          )
-                        })}
+                          {post.frontmatter.tags.map((tag) => {
+                            return (
+                              <li key={tag}>
+                                <a href={`/tags/${kebabCase(tag)}/`}>{tag}</a>
+                              </li>
+                            )
+                          })}
                         </ul>
                       )}
                     </div>
@@ -132,11 +131,12 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }) {
+      filter: { frontmatter: { draft: { eq: false } } }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
-      }        
+      }
       nodes {
         excerpt
         fields {
