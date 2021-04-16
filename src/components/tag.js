@@ -1,5 +1,10 @@
 import React from "react"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
+
+// Utilities
+import kebabCase from "lodash/kebabCase"
+
 const _ = require("lodash")
 
 const Tag = ({ tags }) => {
@@ -8,7 +13,13 @@ const Tag = ({ tags }) => {
       {tags.map(tag => {
         return (
           <li key={tag}>
-            <a href={`/tags/${_.kebabCase(tag)}/`}>{tag}</a>
+            <Link
+              to={`/tags/${kebabCase(tag)}/`}
+              itemProp="url"
+              title={tag}
+            >
+              {tag}
+            </Link>
           </li>
         )
       })}
