@@ -5,6 +5,7 @@ date: 2021-04-13T20:05:26.956Z
 description: Korea has a unique writing system, called "Hangeul". Hangeul was created by King Sejong the Great, in order to promote literacy among the common people. Hangeul was first published on October 9th, 1443 ; a day which became known as "Hangeul Day". Hangeul is a phonemic writing system, which means each symbol corresopnds to a specific sound. Unlike the Roman Alphabet, symbols are assembled into blocks that make up each syllable. Since it was developed with the purpose of being easy to learn, is is logical, concise and efficient.
 draft: false
 category: 'korean'
+thumbnail: /assets/the-korean-alphabet.jpg
 tags:
   - korean
 ---

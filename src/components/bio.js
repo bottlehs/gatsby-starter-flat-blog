@@ -9,11 +9,12 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRssSquare } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithubSquare,
   faInstagramSquare,
   faTwitterSquare,
-  faFacebookSquare
+  faFacebookSquare,
 } from '@fortawesome/free-brands-svg-icons'
 
 const Bio = () => {
@@ -73,6 +74,11 @@ const Bio = () => {
             <p className="bio-introduction">{author.summary}</p>
           )}
           <ul className="bio-social">
+          <li>
+              <Link to={`/rss.xml`} target="_blank" itemProp="url" className="social-icon-rss">
+               <FontAwesomeIcon icon={faRssSquare}  />
+              </Link>
+            </li>            
           {social.github && (
             <li>
               <Link to={social.github} target="_blank" itemProp="url" className="social-icon-github">
