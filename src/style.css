@@ -765,11 +765,21 @@ nav.container .contents ul > li span {
 }
 
 /* Social Icon Color */
-.social-icon-github {
+.social-icon-rss,
+.social-icon-rss:hover,
+.social-icon-rss:focus {
+  color: #a5a5a5;
+}
+
+.social-icon-github,
+.social-icon-github:hover,
+.social-icon-github:focus {
   color: #211f1f;
 }
 
-.social-icon-instagram {
+.social-icon-instagram,
+.social-icon-instagram:hover,
+.social-icon-instagram:focus {
   color: #d6249f;
   background: radial-gradient(
     circle at 30% 107%,
@@ -783,11 +793,15 @@ nav.container .contents ul > li span {
   -webkit-text-fill-color: transparent;
 }
 
-.social-icon-twitter {
+.social-icon-twitter,
+.social-icon-twitter:hover,
+.social-icon-twitter:focus {
   color: #00acee;
 }
 
-.social-icon-facebook {
+.social-icon-facebook,
+.social-icon-facebook:hover,
+.social-icon-facebook:focus {
   color: #4267b2;
 }
 
