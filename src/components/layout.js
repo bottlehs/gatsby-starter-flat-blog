@@ -55,7 +55,21 @@ const Layout = ({ location, title, children }) => {
           )}
         </ThemeToggler>
       </div>
-      <header className="global-header">{header}</header>
+      <header className="global-header">
+        {header}
+        <ul className="navbar">
+          <li>
+            <Link className="" to="/blog">
+              Blog
+            </Link>            
+          </li>          
+          <li>
+            <Link className="" to="/about">
+              About
+            </Link>            
+          </li>
+        </ul>
+      </header>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

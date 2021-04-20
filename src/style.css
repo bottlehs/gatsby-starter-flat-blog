@@ -250,6 +250,37 @@ a:focus {
 }
 
 /* Custom classes */
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  flex-direction: row;
+}
+
+.navbar li {
+}
+
+.navbar li a {
+  font-size: 15px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #000000;
+  font-weight: 500;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+/* Custom classes */
 
 .global-wrapper {
   margin: var(--spacing-0) auto;
@@ -263,6 +294,17 @@ a:focus {
 
 .global-header {
   margin-bottom: var(--spacing-12);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .main-heading {
@@ -493,6 +535,7 @@ a:focus {
 
 .theme {
   text-align: right;
+  display: none;
 }
 
 .theme svg {
