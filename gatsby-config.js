@@ -164,6 +164,7 @@ module.exports = {
         prependToBody: false,
         color: `#000000`,
         footerHeight: 50,
+        includePaths: [{ regex: "^/blog" }],
       },
     },
     `gatsby-plugin-dark-mode`,
