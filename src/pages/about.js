@@ -15,12 +15,15 @@ export default ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="About" />
-        <Bio />
         <p>
           No blog about found. Add markdown posts to "content/__about" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
         </p>
+        <hr />
+        <footer>
+          <Bio />
+        </footer>         
       </Layout>
     )
   }
@@ -28,11 +31,14 @@ export default ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
-      <Bio />
       <section
         dangerouslySetInnerHTML={{ __html: resume.html }}
         itemProp="articleBody"
       />
+      <hr />
+      <footer>
+        <Bio />
+      </footer>         
     </Layout>
   )
 }
