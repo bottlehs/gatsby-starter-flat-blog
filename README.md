@@ -25,6 +25,7 @@ In this template...
 - ☕ 'Buy me a coffee' service
 - 📝 GA
 - ⚙ Configurable
+- 📚 Netlify CMS
 
 > [About this Template](https://www.gatsbyjs.org/starters/bottlehs/gatsby-starter-flat-blog/)
 
