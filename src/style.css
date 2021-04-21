@@ -250,19 +250,38 @@ a:focus {
 }
 
 /* Custom classes */
+.top {
+  margin: var(--spacing-0) auto;
+  max-width: var(--maxWidth-wrapper);
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-direction: row;
+  flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
   margin-top: 0;
   list-style: none;
-  flex-direction: row;
+  padding: var(--spacing-5) var(--spacing-5);
 }
 
 .navbar li {
@@ -272,8 +291,8 @@ a:focus {
 .navbar li a {
   font-size: 15px;
   line-height: var(--lineHeight-tight);
-  padding-left: 1.5rem;
-  padding-right: 0rem;
+  padding-left: 0rem;
+  padding-right: 1.5rem;
   font-weight: 500;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   opacity: 1 !important;
@@ -294,17 +313,6 @@ a:focus {
 
 .global-header {
   margin-bottom: var(--spacing-12);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .main-heading {

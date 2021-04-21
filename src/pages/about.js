@@ -31,20 +31,10 @@ export default ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{resume.frontmatter.title}</h1>
-          <p>{resume.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: resume.html }}
-          itemProp="articleBody"
-        />
-      </article>
+      <section
+        dangerouslySetInnerHTML={{ __html: resume.html }}
+        itemProp="articleBody"
+      />
       <hr />
       <footer>
         <Bio />

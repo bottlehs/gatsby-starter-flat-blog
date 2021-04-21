@@ -27,12 +27,11 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">
-        {header}
+    <div>
+      <div className="top">
         <ul className="navbar">
           <li>
-            <Link className="" to="/blog">
+            <Link className="" to="/">
               Blog
             </Link>
           </li>
@@ -42,41 +41,47 @@ const Layout = ({ location, title, children }) => {
             </Link>
           </li>
         </ul>
-      </header>
-      <div className="theme">
-        <ThemeToggler>
-          {({ theme, toggleTheme }) => (
-            <Switch
-              onChange={(e) => toggleTheme(theme === 'dark' ? 'light' : 'dark')}
-              checked={theme === 'dark'}
-              offColor="#b2dcf2"
-              onColor="#423090"
-              uncheckedIcon={
-                <IconContext.Provider
-                  value={{ color: '#f4da87', className: 'theme-sun-icon' }}
-                >
-                  <RiSunFill />
-                </IconContext.Provider>
-              }
-              checkedIcon={
-                <IconContext.Provider
-                  value={{ color: '#e7eee5', className: 'theme-moon-icon' }}
-                >
-                  <RiMoonClearFill />
-                </IconContext.Provider>
-              }
-            />
-          )}
-        </ThemeToggler>
+
+        <div className="theme">
+          <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <Switch
+                onChange={(e) =>
+                  toggleTheme(theme === 'dark' ? 'light' : 'dark')
+                }
+                checked={theme === 'dark'}
+                offColor="#b2dcf2"
+                onColor="#423090"
+                uncheckedIcon={
+                  <IconContext.Provider
+                    value={{ color: '#f4da87', className: 'theme-sun-icon' }}
+                  >
+                    <RiSunFill />
+                  </IconContext.Provider>
+                }
+                checkedIcon={
+                  <IconContext.Provider
+                    value={{ color: '#e7eee5', className: 'theme-moon-icon' }}
+                  >
+                    <RiMoonClearFill />
+                  </IconContext.Provider>
+                }
+              />
+            )}
+          </ThemeToggler>
+        </div>
       </div>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://gatsby-starter-flat-blog.netlify.app">
-          Gatsby Starter Flat Blog
-        </a>
-      </footer>
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <header className="global-header">{header}</header>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://gatsby-starter-flat-blog.netlify.app">
+            Gatsby Starter Flat Blog
+          </a>
+        </footer>
+      </div>
     </div>
   )
 }
