@@ -740,8 +740,7 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
-.tocWrapper,
-.tagTocWrapper {
+.tocWrapper {
   position: absolute;
   top: 0;
   height: 100%;
@@ -749,25 +748,6 @@ a:focus {
 
 .tocWrapper {
   right: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
-}
-
-.tagTocWrapper {
-  left: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
-}
-
-nav.container .tagTocWrapper nav.container {
-  margin-top: 80px;
-  color: var(--color-text-light);
-  width: calc((100vw - 720px) / 2 - 50px);
-  display: none;
-  margin-left: 5rem;
-  border-left: 1px solid rgb(233, 236, 239);
-}
-
-.tagTocWrapper nav.container {
-  margin-left: 0;
-  border-left: 0;
-  margin-right: 5rem;
 }
 
 nav.container .title {
@@ -886,5 +866,14 @@ nav.container .contents ul > li span {
   .blog-post-nav ul li {
     flex: initial;
     width: 100%;
+  }
+
+  .post-list-item section {
+    display: block;
+  }
+
+  .post-list-item section .post-list-thumbnail img {
+    width: 100%;
+    height: auto;
   }
 }
