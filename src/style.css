@@ -273,7 +273,7 @@ a:focus {
   font-size: 15px;
   line-height: var(--lineHeight-tight);
   padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-right: 0rem;
   font-weight: 500;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   opacity: 1 !important;
@@ -535,7 +535,6 @@ a:focus {
 
 .theme {
   text-align: right;
-  display: none;
 }
 
 .theme svg {
