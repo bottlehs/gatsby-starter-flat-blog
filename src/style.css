@@ -542,7 +542,7 @@ a:focus {
 }
 
 .theme {
-  text-align: right;
+  padding: var(--spacing-0) var(--spacing-5);
 }
 
 .theme svg {
