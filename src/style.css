@@ -250,6 +250,56 @@ a:focus {
 }
 
 /* Custom classes */
+.top {
+  margin: var(--spacing-0) auto;
+  max-width: var(--maxWidth-wrapper);
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style: none;
+  padding: var(--spacing-5) var(--spacing-5);
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar li a {
+  font-size: 15px;
+  line-height: var(--lineHeight-tight);
+  padding-left: 0rem;
+  padding-right: 1.5rem;
+  font-weight: 500;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+/* Custom classes */
 
 .global-wrapper {
   margin: var(--spacing-0) auto;
@@ -690,8 +740,7 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
-.tocWrapper,
-.tagTocWrapper {
+.tocWrapper {
   position: absolute;
   top: 0;
   height: 100%;
@@ -699,25 +748,6 @@ a:focus {
 
 .tocWrapper {
   right: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
-}
-
-.tagTocWrapper {
-  left: calc((100vw - var(--maxWidth-wrapper)) / 2 * (-1));
-}
-
-nav.container .tagTocWrapper nav.container {
-  margin-top: 80px;
-  color: var(--color-text-light);
-  width: calc((100vw - 720px) / 2 - 50px);
-  display: none;
-  margin-left: 5rem;
-  border-left: 1px solid rgb(233, 236, 239);
-}
-
-.tagTocWrapper nav.container {
-  margin-left: 0;
-  border-left: 0;
-  margin-right: 5rem;
 }
 
 nav.container .title {
@@ -807,7 +837,7 @@ nav.container .contents ul > li span {
 
 /* Media queries */
 
-@media screen and (min-width: 1650px) {
+@media screen and (min-width: 1350px) {
   nav.container {
     position: sticky;
     top: 70px;
@@ -836,5 +866,14 @@ nav.container .contents ul > li span {
   .blog-post-nav ul li {
     flex: initial;
     width: 100%;
+  }
+
+  .post-list-item section {
+    display: block;
+  }
+
+  .post-list-item section .post-list-thumbnail img {
+    width: 100%;
+    height: auto;
   }
 }
