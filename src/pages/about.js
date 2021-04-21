@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 export default ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -23,7 +23,7 @@ export default ({ data, location }) => {
         <hr />
         <footer>
           <Bio />
-        </footer>         
+        </footer>
       </Layout>
     )
   }
@@ -31,14 +31,24 @@ export default ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
-      <section
-        dangerouslySetInnerHTML={{ __html: resume.html }}
-        itemProp="articleBody"
-      />
+      <article
+        className="blog-post"
+        itemScope
+        itemType="http://schema.org/Article"
+      >
+        <header>
+          <h1 itemProp="headline">{resume.frontmatter.title}</h1>
+          <p>{resume.frontmatter.date}</p>
+        </header>
+        <section
+          dangerouslySetInnerHTML={{ __html: resume.html }}
+          itemProp="articleBody"
+        />
+      </article>
       <hr />
       <footer>
         <Bio />
-      </footer>         
+      </footer>
     </Layout>
   )
 }
