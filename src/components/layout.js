@@ -7,7 +7,9 @@ import { RiSunFill, RiMoonClearFill } from 'react-icons/ri'
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
+  console.log(location.pathname)
+  const isRootPath =
+    location.pathname === rootPath || location.pathname === '/tags'
   let header
 
   if (isRootPath) {

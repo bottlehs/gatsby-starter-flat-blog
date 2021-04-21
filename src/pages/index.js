@@ -34,36 +34,6 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
 
       <div className="post-list-contaner">
-        {tags.length !== 0 && (
-          <div class="tagTocWrapper">
-            <nav className="container">
-              <div className="contents">
-                <ul>
-                  {tags.map((tag) => {
-                    return (
-                      <li>
-                        <Link
-                          to={`/tags/${kebabCase(tag.fieldValue)}/`}
-                          itemProp="url"
-                          title={tag.fieldValue}
-                        >
-                          {tag.fieldValue}
-                        </Link>
-
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: '(' + tag.totalCount + ')' || '(0)',
-                          }}
-                          itemProp="count"
-                        />
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            </nav>
-          </div>
-        )}
         <ol style={{ listStyle: `none` }}>
           {posts.map((post) => {
             const title = post.frontmatter.title || post.fields.slug
