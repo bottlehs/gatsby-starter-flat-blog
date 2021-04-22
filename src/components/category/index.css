@@ -1,0 +1,104 @@
+.category-container {
+  border-top: 1px solid #ecf0f2;
+  border-bottom: 1px solid #ecf0f2;
+  border-right: 6px solid #ecf0f2;
+  border-left: 6px solid #ecf0f2;
+  background-color: #f4f7f8;
+}
+
+.category-container .item {
+  border: 1px solid #ecf0f2;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.category-container .item a {
+  color: #666;
+}
+
+.category-container .item[aria-selected='true'] {
+  border: 2px solid #909da1;
+  font-weight: bolder;
+}
+
+.category-container .item[aria-selected='true'] a {
+  color: #636c6e;
+}
+
+/* dark start */
+body.dark .category-container {
+  border-top: 1px solid rgb(56, 54, 54);
+  border-bottom: 1px solid rgb(56, 54, 54);
+  border-right: 6px solid rgb(56, 54, 54);
+  border-left: 6px solid rgb(56, 54, 54);
+  background-color: #24272c;
+}
+
+body.dark .category-container .item {
+  border: 1px solid rgb(56, 54, 54);
+  background-color: #282c35;
+  -webkit-box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .category-container .item a {
+  color: #d8d7d7;
+}
+
+body.dark .category-container .item[aria-selected='true'] {
+  border: 2px solid #666;
+  font-weight: bolder;
+}
+
+body.dark .category-container .item[aria-selected='true'] a {
+  color: #fff;
+}
+/* dark end */
+
+.category-container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  line-height: 0;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  z-index: 1;
+  padding: 6px 20px;
+}
+
+.category-container .item {
+  display: inline-block;
+  margin: 0.25rem 6px 0.25rem 0;
+  border-radius: 15px;
+  white-space: normal;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.category-container .item div {
+  display: block;
+  padding: 14px 16px 16px 16px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.category-container .item:last-child {
+  margin-right: 0;
+}
+
+.category-container::-webkit-scrollbar {
+  display: none;
+}
+
+.category-container {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .my-smooth-container {
+    scroll-behavior: auto;
+  }
+}
