@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Link, graphql } from 'gatsby'
-
+import _ from 'lodash'
 import Bio from '../components/bio'
 import { Category } from '../components/category'
 import { useCategory } from '../hooks/useCategory'
