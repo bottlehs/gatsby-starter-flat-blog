@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Link, graphql } from 'gatsby'
-
+import _ from 'lodash'
 import Bio from '../components/bio'
 import { Category } from '../components/category'
 import { useCategory } from '../hooks/useCategory'
@@ -120,12 +120,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
+      filter: { frontmatter: { category: { ne: null }, draft: { eq: false } } }
     ) {
-      group(field: frontmatter___category) {
-        fieldValue
-        totalCount
-      }
       nodes {
         excerpt
         fields {
