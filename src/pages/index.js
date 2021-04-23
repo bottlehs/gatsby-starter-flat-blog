@@ -120,12 +120,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
+      filter: { frontmatter: { category: { ne: null }, draft: { eq: false } } }
     ) {
-      group(field: frontmatter___category) {
-        fieldValue
-        totalCount
-      }
       nodes {
         excerpt
         fields {
