@@ -115,6 +115,7 @@ You can fix meta data of blog in `/gatsby-meta-config.js` file.
 ```sh
 src
 ├── components
+│   ├── category
 │   ├── bio.js
 │   ├── layout.js
 │   ├── seo.js
