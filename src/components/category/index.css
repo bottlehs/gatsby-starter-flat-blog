@@ -38,7 +38,6 @@ body.dark .category-container .item a {
 
 body.dark .category-container .item[aria-selected='true'] {
   border: 1px solid #757575;
-  font-weight: bolder;
   background-color: #757575;
 }
 
