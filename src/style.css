@@ -308,7 +308,7 @@ a:focus {
 }
 
 .global-wrapper[data-is-root-path='true'] .bio {
-  margin-bottom: var(--spacing-20);
+  margin-bottom: var(--spacing-10);
 }
 
 .global-header {
