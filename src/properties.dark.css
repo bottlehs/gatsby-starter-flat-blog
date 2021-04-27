@@ -1,0 +1,13 @@
+/* CSS Custom Properties Definitions */
+
+:root {
+  --dark--color-primary: #292929;
+  --dark--color-text: #292929;
+  --dark--color-text-hover: #000000;
+  --dark--color-text-light: #757575;
+  --dark--color-heading: #292929;
+  --dark--color-heading-black: black;
+  --dark--color-accent: #d1dce5;
+  --dark--color-white: #ffffff;
+  --dark--color-tag: rgba(117, 117, 117, 1);
+}
