@@ -54,6 +54,7 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
+  --color-bg: #0d1117;
   --color-primary: #292929;
   --color-text: #292929;
   --color-text-hover: #000000;
@@ -62,5 +63,6 @@
   --color-heading-black: black;
   --color-accent: #d1dce5;
   --color-white: #ffffff;
+  --color-tag-bg: rgb(242, 242, 242);
   --color-tag: rgba(117, 117, 117, 1);
 }

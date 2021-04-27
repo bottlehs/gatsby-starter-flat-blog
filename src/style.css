@@ -310,7 +310,7 @@ a:focus {
 }
 
 .post-list-item section .post-list-content ul li a {
-  background: rgb(242, 242, 242);
+  background: var(--color-tag-bg);
   padding: 5px 10px;
   line-height: 22px;
   color: var(--color-tag);
@@ -663,7 +663,7 @@ a:focus {
 }
 
 .blog-post-tag li a {
-  background: rgb(242, 242, 242);
+  background: var(--color-tag-bg);
   padding: 5px 10px;
   line-height: 22px;
   color: var(--color-tag);

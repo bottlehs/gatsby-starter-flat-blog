@@ -1,6 +1,7 @@
 /* CSS Custom Properties Definitions */
 
 :root {
+  --dark--color-bg: #0d1117;
   --dark--color-primary: #292929;
   --dark--color-text: #292929;
   --dark--color-text-hover: #000000;
@@ -9,5 +10,6 @@
   --dark--color-heading-black: black;
   --dark--color-accent: #d1dce5;
   --dark--color-white: #ffffff;
+  --dark--color-tag-bg: rgb(242, 242, 242);
   --dark--color-tag: rgba(117, 117, 117, 1);
 }
