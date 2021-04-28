@@ -128,6 +128,9 @@ src
 │   ├── index.js
 │   └── tags.js
 │── normalize.css
+│── properties.css
+│── properties.dark.css
+│── normalize.css
 │── style.css
 │── style.dark.css
 └── templates
