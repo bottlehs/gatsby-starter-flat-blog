@@ -51,16 +51,22 @@ body.dark .post-list-item h2 {
   color: var(--dark--color-primary);
 }
 
-.body.dark .blog-post-tag li a {
+body.dark .blog-post-tag li a {
   background: var(--dark--color-tag-bg);
   color: var(--dark--color-tag);
 }
 
-.body.dark .post-list-item section .post-list-content ul li {
+body.dark .post-list-item section .post-list-content ul li {
   color: var(--dark--color-text-light);
 }
 
-.body.dark .post-list-item section .post-list-content ul li a {
+body.dark .post-list-item section .post-list-content ul li a {
   background: var(--dark--color-tag-bg);
   color: var(--dark--color-tag);
+}
+
+body.dark .theme label svg {
+  font-size: 15px;
+  line-height: var(--lineHeight-tight);
+  color: var(--dark--color-dark-mode);
 }

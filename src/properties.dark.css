@@ -1,6 +1,7 @@
 /* CSS Custom Properties Definitions */
 
 :root {
+  --dark--color-dark-mode: #ffffff;
   --dark--color-bg: #0d1117;
   --dark--color-primary: #292929;
   --dark--color-text: #292929;

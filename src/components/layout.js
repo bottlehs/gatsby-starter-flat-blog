@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import Switch from 'react-switch'
 import { IconContext } from 'react-icons'
 import { RiSunFill, RiMoonClearFill } from 'react-icons/ri'
 
@@ -47,28 +46,20 @@ const Layout = ({ location, title, children }) => {
         <div className="theme">
           <ThemeToggler>
             {({ theme, toggleTheme }) => (
-              <Switch
-                onChange={(e) =>
-                  toggleTheme(theme === 'dark' ? 'light' : 'dark')
-                }
+              <div>
+              <input
+                id="toggle"
+                type="checkbox"
+                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
                 checked={theme === 'dark'}
-                offColor="#b2dcf2"
-                onColor="#423090"
-                uncheckedIcon={
-                  <IconContext.Provider
-                    value={{ color: '#f4da87', className: 'theme-sun-icon' }}
-                  >
-                    <RiSunFill />
-                  </IconContext.Provider>
+              />{' '}
+              <label for="toggle">
+                {theme === 'dark' 
+                  ? <RiSunFill />                  
+                  : <RiMoonClearFill />
                 }
-                checkedIcon={
-                  <IconContext.Provider
-                    value={{ color: '#e7eee5', className: 'theme-moon-icon' }}
-                  >
-                    <RiMoonClearFill />
-                  </IconContext.Provider>
-                }
-              />
+              </label>
+            </div>
             )}
           </ThemeToggler>
         </div>

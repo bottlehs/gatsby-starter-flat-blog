@@ -233,6 +233,27 @@ a:focus {
   text-decoration: none;
 }
 
+/* theme */
+
+.theme {
+  padding: var(--spacing-0) var(--spacing-5);
+}
+
+.theme input {
+  display: none;
+}
+
+.theme label {
+  cursor: pointer;
+}
+
+.theme label svg {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: var(--lineHeight-tight);
+  color: var(--color-dark-mode);
+}
+
 /* Custom classes */
 
 .global-wrapper {
@@ -473,16 +494,6 @@ a:focus {
 
 .share button:hover:not(:active) {
   opacity: 0.75;
-}
-
-.theme {
-  padding: var(--spacing-0) var(--spacing-5);
-}
-
-.theme svg {
-  width: 100%;
-  height: 100%;
-  padding: 5px;
 }
 
 .blog-post {
