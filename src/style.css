@@ -245,10 +245,13 @@ a:focus {
 
 .theme label {
   cursor: pointer;
+  height: 24px;
+  display: block;
 }
 
 .theme label svg {
-  font-size: 15px;
+  font-size: 24px;
+  height: 24px;
   font-weight: 500;
   line-height: var(--lineHeight-tight);
   color: var(--color-dark-mode);

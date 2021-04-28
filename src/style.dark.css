@@ -66,7 +66,5 @@ body.dark .post-list-item section .post-list-content ul li a {
 }
 
 body.dark .theme label svg {
-  font-size: 15px;
-  line-height: var(--lineHeight-tight);
   color: var(--dark--color-dark-mode);
 }
