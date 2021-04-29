@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import { IconContext } from 'react-icons'
 import { RiSunFill, RiMoonClearFill } from 'react-icons/ri'
 
 const Layout = ({ location, title, children }) => {
