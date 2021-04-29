@@ -10,10 +10,6 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/bottlehs/gatsby-starter-flat-blog/issues)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/290a052e-7670-40bb-91e0-1192119e6955/deploy-status)](https://app.netlify.com/sites/gatsby-starter-flat-blog/deploys)
 
-<a href="https://twitter.com/bottlehs">
-<img alt="Twitter: bottlehs" src="https://img.shields.io/twitter/follow/bottlehs.svg?style=social" target="_blank" />
-</a>
-
 ![screenshot](./assets/screenshot.png)
 
 In this template...
@@ -127,6 +123,9 @@ src
 │   ├── about.js
 │   ├── index.js
 │   └── tags.js
+│── normalize.css
+│── properties.css
+│── properties.dark.css
 │── normalize.css
 │── style.css
 │── style.dark.css

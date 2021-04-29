@@ -41,12 +41,30 @@ const Tags = ({ data, pageContext, location }) => {
                   <small>{post.frontmatter.date}</small>
                 </header>
                 <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
+                  {post.frontmatter.thumbnail && (
+                    <div className="post-list-thumbnail">
+                      <img src={post.frontmatter.thumbnail} alt="" />
+                    </div>
+                  )}
+                  <div className="post-list-content">
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                    {post.frontmatter.tags && (
+                      <ul>
+                        {post.frontmatter.tags.map((tag) => {
+                          return (
+                            <li key={tag}>
+                              <a href={`/tags/${kebabCase(tag)}/`}>{tag}</a>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    )}
+                  </div>
                 </section>
               </article>
             </li>
@@ -108,7 +126,10 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
+          category
           description
+          tags
+          thumbnail
         }
       }
     }
