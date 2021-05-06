@@ -7,6 +7,9 @@ import SEO from "../components/seo"
 // Components
 import { Link, graphql } from "gatsby"
 
+// Utilities
+import kebabCase from 'lodash/kebabCase'
+
 const Tags = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { tag } = pageContext
