@@ -4,6 +4,7 @@ module.exports = {
     name: `Your Name`,
     summary: `Your Summary`,
   },
+  copyright: `bottlehs`,
   description: `Your Description`,
   siteUrl: `https://gatsby-starter-flat-blog.netlify.app`,
   social: {

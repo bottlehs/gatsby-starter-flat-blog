@@ -1,9 +1,19 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { useStaticQuery, Link } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { RiSunFill, RiMoonClearFill } from 'react-icons/ri'
 
 const Layout = ({ location, title, children }) => {
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      site {
+        siteMetadata {
+          copyright
+        }
+      }      
+    }
+  `)
+  const copyright = data.site.siteMetadata.copyright
   const rootPath = `${__PATH_PREFIX__}/`
   console.log(location.pathname)
   const isRootPath =
@@ -70,7 +80,7 @@ const Layout = ({ location, title, children }) => {
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://gatsby-starter-flat-blog.netlify.app">
-            Gatsby Starter Flat Blog
+            { copyright }
           </a>
         </footer>
       </div>
