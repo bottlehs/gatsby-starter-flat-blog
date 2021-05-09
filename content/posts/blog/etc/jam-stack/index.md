@@ -9,7 +9,6 @@ thumbnail: /assets/jamstack-cover.png
 tags:
   - jamstack
   - netlify
-    - netlify2
 ---
 
 ![JAMStack](/assets/jamstack-cover.png 'JAMStack')
