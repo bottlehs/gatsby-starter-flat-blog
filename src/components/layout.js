@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, Link } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { RiSunFill, RiMoonClearFill } from 'react-icons/ri'
 
@@ -10,7 +10,7 @@ const Layout = ({ location, title, children }) => {
         siteMetadata {
           copyright
         }
-      }      
+      }
     }
   `)
   const copyright = data.site.siteMetadata.copyright
@@ -56,19 +56,18 @@ const Layout = ({ location, title, children }) => {
           <ThemeToggler>
             {({ theme, toggleTheme }) => (
               <div>
-              <input
-                id="toggle"
-                type="checkbox"
-                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-                checked={theme === 'dark'}
-              />{' '}
-              <label for="toggle">
-                {theme === 'dark' 
-                  ? <RiSunFill />                  
-                  : <RiMoonClearFill />
-                }
-              </label>
-            </div>
+                <input
+                  id="toggle"
+                  type="checkbox"
+                  onChange={(e) =>
+                    toggleTheme(e.target.checked ? 'dark' : 'light')
+                  }
+                  checked={theme === 'dark'}
+                />{' '}
+                <label for="toggle">
+                  {theme === 'dark' ? <RiSunFill /> : <RiMoonClearFill />}
+                </label>
+              </div>
             )}
           </ThemeToggler>
         </div>
@@ -79,9 +78,7 @@ const Layout = ({ location, title, children }) => {
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://gatsby-starter-flat-blog.netlify.app">
-            { copyright }
-          </a>
+          <a href="https://gatsby-starter-flat-blog.netlify.app">{copyright}</a>
         </footer>
       </div>
     </div>
