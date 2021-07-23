@@ -21,7 +21,7 @@
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^2.6.0",
     "gatsby-plugin-google-analytics": "^2.4.0",
-    "gatsby-plugin-lodash": "^4.7.1",
+    "gatsby-plugin-lodash": "^4.8.0",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-netlify-cms": "^5.0.0",
     "gatsby-plugin-offline": "^3.2.29",
