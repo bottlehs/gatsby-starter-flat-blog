@@ -23,7 +23,7 @@
     "gatsby-plugin-google-analytics": "^2.4.0",
     "gatsby-plugin-lodash": "^4.7.1",
     "gatsby-plugin-manifest": "^2.12.1",
-    "gatsby-plugin-netlify-cms": "^5.0.0",
+    "gatsby-plugin-netlify-cms": "^6.4.0",
     "gatsby-plugin-offline": "^3.2.29",
     "gatsby-plugin-page-progress": "^2.2.1",
     "gatsby-plugin-react-helmet": "^3.3.12",
